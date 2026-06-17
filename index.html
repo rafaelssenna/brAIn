@@ -7,7 +7,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>brAIn: uma inteligência que aprende vivendo</title>
-  <meta name="description" content="brAIn: uma inteligencia no paradigma do cerebro, que nasce sem saber nada e aprende vivendo. Do primeiro neuronio a comunicacao, em 18 marcos." />
+  <meta name="description" content="brAIn: uma inteligencia no paradigma do cerebro, que nasce sem saber nada e aprende vivendo. Do primeiro neuronio a comunicacao e a eficiencia cortical, em 23 marcos." />
   <meta name="author" content="Rafael Sena Roman" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +24,7 @@
       <a href="#fase-1">Fase 1</a>
       <a href="#fase-2">Fase 2</a>
       <a href="#fase-3">Fase 3</a>
+      <a href="#fase-4">Fase 4</a>
       <a href="#fronteira">Até onde vai</a>
     </nav>
     <a class="topbar__repo" href="https://github.com/rafaelssenna/brAIn" target="_blank" rel="noopener">GitHub</a>
@@ -66,21 +67,24 @@
       <p>As IAs dominantes hoje são <em>Transformers</em>: aprendem uma vez, num treino
         congelado. O brAIn segue o caminho do cérebro, com neurônios <em>spiking</em>,
         plasticidade local e <em>predictive coding</em>, sem usar <em>backpropagation</em>.
-        Em três fases e 18 marcos, cada peça foi construída do zero, testada contra teoria e
+        Em quatro fases e 23 marcos, cada peça foi construída do zero, testada contra teoria e
         baselines, e revisada com rigor. O resultado é uma demonstração de ponta a ponta,
         ainda em pequena escala, de algo que a literatura já descreveu mas ninguém tinha
         reunido: perceber, prever, agir, ter curiosidade, lembrar, formar conceitos, planejar,
-        enxergar e se comunicar com significado.</p>
+        enxergar e se comunicar com significado, e fazer tudo isso de forma enxuta, com código
+        esparso como o do córtex.</p>
     </section>
 
     <section class="section" id="resumo">
       <h2 class="h2"><span class="sec-no">§</span> Os números</h2>
       <ul class="keyfacts">
-        <li><b>18</b> marcos, em <b>3</b> fases</li>
-        <li><b>69</b> testes automatizados, todos passando</li>
+        <li><b>23</b> marcos, em <b>4</b> fases</li>
+        <li><b>86</b> testes automatizados, todos passando</li>
         <li>a "surpresa" do agente caiu <b>79%</b> ao aprender a prever o mundo (Fase 1)</li>
         <li>dois agentes chegaram a <b>100%</b> de acerto numa língua que inventaram, e ela
           funcionou até para frases nunca vistas</li>
+        <li>código esparso, como o do córtex (~12% ativo): a mesma cognição com cerca de
+          <b>7×</b> menos operações</li>
         <li><b>zero</b> uso de backpropagation, o método padrão das IAs atuais</li>
       </ul>
       <p class="note">Regra do projeto: medir tudo, sempre comparar com um baseline, e voltar
@@ -91,6 +95,7 @@
     <section class="section" id="fase-1" data-phase></section>
     <section class="section" id="fase-2" data-phase></section>
     <section class="section" id="fase-3" data-phase></section>
+    <section class="section" id="fase-4" data-phase></section>
 
     <section class="section" id="fronteira">
       <h2 class="h2"><span class="sec-no">§</span> Até onde dá para chegar</h2>
@@ -99,8 +104,9 @@
         <li><b>Já foi alcançado.</b> A prova de conceito completa do paradigma cerebral, em
           pequena escala e verificada. Juntar todas essas peças é justamente o que ninguém
           tinha feito. Essa é a conquista de verdade.</li>
-        <li><b>Dá para alcançar com mais recursos.</b> Rodar em hardware mais forte, em mundos
-          mais ricos, e unir tudo num organismo só. Daria um agente robusto no nível de um
+        <li><b>Dá para alcançar com mais recursos.</b> Levar o substrato eficiente (esparso,
+          dirigido a eventos) a mundos mais ricos e a hardware feito para isso (neuromórfico),
+          e unir os neurônios que disparam ao organismo. Daria um agente robusto no nível de um
           animal simples. É um programa de pesquisa de verdade.</li>
         <li><b>Está fora do alcance de um projeto solo.</b> Cognição e linguagem humanas
           completas, surgindo sozinhas. Ninguém chegou lá, nem os grandes laboratórios.
@@ -113,7 +119,7 @@
       <h2 class="h2"><span class="sec-no">§</span> As peças do paradigma</h2>
       <p>Os mecanismos usados, todos inspirados no cérebro e baseados em regras locais:</p>
       <p class="taglist">
-        <span>neurônios spiking</span><span>STDP</span><span>predictive coding</span><span>aprendizado local</span><span>corpo e mundo</span><span>curiosidade</span><span>memória</span><span>hierarquia</span><span>planejamento</span><span>significado ancorado</span><span class="taglist__neg">sem backpropagation</span>
+        <span>neurônios spiking</span><span>STDP</span><span>predictive coding</span><span>aprendizado local</span><span>corpo e mundo</span><span>curiosidade</span><span>memória</span><span>hierarquia</span><span>planejamento</span><span>significado ancorado</span><span>código esparso</span><span class="taglist__neg">sem backpropagation</span>
       </p>
     </section>
 
@@ -124,6 +130,7 @@
         <li>Bi, G., e Poo, M. (1998). Synaptic modifications in cultured hippocampal neurons (STDP). <i>J. Neurosci.</i></li>
         <li>Rao, R. P. N., e Ballard, D. H. (1999). Predictive coding in the visual cortex. <i>Nature Neuroscience.</i></li>
         <li>Olshausen, B. A., e Field, D. J. (1996). Emergence of simple-cell receptive fields by sparse coding. <i>Nature.</i></li>
+        <li>Mead, C. (1990). Neuromorphic electronic systems. <i>Proceedings of the IEEE.</i></li>
         <li>Friston, K. (2010). The free-energy principle. <i>Nature Reviews Neuroscience.</i></li>
         <li>Oudeyer, P.-Y., e Kaplan, F. (2007). Intrinsic motivation systems. <i>Frontiers in Neurorobotics.</i></li>
         <li>Harnad, S. (1990). The symbol grounding problem. <i>Physica D.</i></li>
