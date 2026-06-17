@@ -69,23 +69,8 @@ body {
 .demo__hint b { color: var(--ink); }
 .demo__cap { font-family: var(--sans); font-size: .85rem; line-height: 1.55; color: var(--ink-soft); margin-top: 14px; }
 
-.lang { max-width: var(--text-w); margin: 0 auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper-2); padding: 20px 22px; }
-.lang__bar { display: flex; gap: 20px; align-items: center; font-family: var(--sans); font-size: .9rem; color: var(--ink-soft); padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
-.lang__bar b { color: var(--ink); font-variant-numeric: tabular-nums; }
-.lang__bar button { margin-left: auto; font-family: var(--sans); font-size: .82rem; color: var(--accent); background: none; border: 1px solid var(--rule); border-radius: 6px; padding: 6px 13px; cursor: pointer; transition: border-color .2s; }
-.lang__bar button:hover { border-color: var(--accent); }
-.lang__exchange { font-family: var(--sans); font-size: 1.04rem; min-height: 60px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; color: var(--ink); padding: 18px 0; line-height: 1.5; }
-.lang__exchange .muted { color: var(--ink-soft); }
-.swatch { width: 15px; height: 15px; border-radius: 4px; display: inline-block; vertical-align: -2px; }
-.word { font-family: var(--mono); background: var(--accent-soft); color: var(--accent); padding: 2px 9px; border-radius: 5px; font-size: .95rem; }
-.ok { color: #5fd38a; font-weight: 700; }
-.no { color: #e58a93; font-weight: 700; }
-.lang__lexcap { font-family: var(--sans); font-size: .8rem; color: var(--ink-faint); margin: 4px 0 10px; }
-.lang__lexwrap { overflow-x: auto; }
-.lang__lex { display: grid; gap: 5px; max-width: 380px; }
-.lex-cell { aspect-ratio: 1; border-radius: 4px; border: 1px solid var(--rule); }
-.lex-wordh { font-family: var(--mono); font-size: .72rem; color: var(--ink-faint); text-align: center; align-self: center; }
-.lex-dot { width: 15px; height: 15px; border-radius: 4px; justify-self: center; align-self: center; }
+.brainstage { max-width: var(--wide-w); margin: 0 auto; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; box-shadow: 0 16px 44px rgba(0,0,0,.45); background: radial-gradient(900px 520px at 50% 42%, #0e1422 0%, #07090e 72%); }
+.brainstage canvas { display: block; width: 100%; height: 100%; cursor: crosshair; touch-action: none; }
 
 /* ---------- Cabeçalho ---------- */
 .titleblock { text-align: left; padding-bottom: 30px; border-bottom: 1px solid var(--rule); }

@@ -21,7 +21,7 @@
     <a class="topbar__brand" href="#top">brAIn</a>
     <nav class="topbar__nav">
       <a href="#sobre">O que é</a>
-      <a href="#agora">Demo ao vivo</a>
+      <a href="#cerebro">O cérebro</a>
       <a href="#fase-1">Fase 1</a>
       <a href="#fase-2">Fase 2</a>
       <a href="#fase-3">Fase 3</a>
@@ -61,26 +61,18 @@
         Quando um resultado não se confirmava, a gente voltava atrás em vez de inventar.</p>
     </section>
 
-    <!-- Demo do estágio atual: linguagem emergente -->
-    <section class="demo2" id="agora">
-      <h2 class="plain__h">O estágio atual: inventando uma língua</h2>
-      <p class="demo__hint">Esta é a coisa mais <b>avançada</b> que o brAIn faz hoje. Dois
-        agentes que não têm vocabulário nenhum precisam se entender. A cada rodada, um vê um
-        conceito (a bolinha colorida), inventa uma "palavra", e o outro tenta adivinhar.
-        Quando acertam, reforçam. Veja a língua nascer do zero.</p>
-      <div class="lang">
-        <div class="lang__bar">
-          <span>rodada <b id="ln-round">0</b></span>
-          <span>entendimento <b id="ln-acc">20%</b></span>
-          <button id="ln-reset" type="button">recomeçar</button>
-        </div>
-        <div class="lang__exchange" id="ln-ex"></div>
-        <div class="lang__lexwrap"><div class="lang__lex" id="ln-lex"></div></div>
-      </div>
-      <p class="demo__cap">É o mecanismo real do marco de comunicação: aprendizado por
-        recompensa somado à "atenção conjunta" (o ouvinte enxerga o que o falante queria
-        dizer). Ninguém define o vocabulário; ele emerge da necessidade de se entender. A
-        grade abaixo é o dicionário se formando: conceitos nas linhas, palavras nas colunas.</p>
+    <!-- Demo: o cérebro em atividade (rede de neurônios LIF) -->
+    <section class="demo2" id="cerebro">
+      <h2 class="plain__h">O cérebro em atividade</h2>
+      <p class="demo__hint">Isto é o que acontece por dentro: uma rede de neurônios de verdade,
+        o mesmo modelo dos primeiros marcos, disparando e passando sinais uns aos outros, como
+        num cérebro. Passe o mouse sobre a rede para estimular uma região e veja a atividade
+        se espalhar.</p>
+      <div class="brainstage"><canvas id="neural-net"></canvas></div>
+      <p class="demo__cap">Cada ponto é um neurônio (modelo LIF). As linhas são sinapses.
+        Quando um neurônio acumula carga suficiente, ele dispara: acende e manda um pulso
+        pelos seus contatos, que pode fazer outros dispararem. É a dinâmica real do projeto,
+        do neurônio isolado à rede que aprende, rodando ao vivo no seu navegador.</p>
     </section>
 
     <!-- Resumo técnico -->
@@ -173,6 +165,6 @@
   </div>
 
   <script src="site/app.js"></script>
-  <script src="site/demo2.js"></script>
+  <script src="site/neuralviz.js"></script>
 </body>
 </html>
