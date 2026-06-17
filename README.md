@@ -67,7 +67,9 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   percepção e linguagem **co-emergem** (surpresa 0.935→0.012, comunicação 8%→92%), com
   a linguagem ficando **atrás** da percepção · **M21** aprende **palavras de português**
   de verdade ancoradas no que percebe (nomear e apontar, 33%→100%; só nomeia o que
-  distingue, r=0.99). **77 testes verdes.** O "100%"
+  distingue, r=0.99) · **M22** substrato **esparso** (método > força bruta): código
+  cortical (12.5% ativo) faz o mesmo com **~7.5× menos operações sinápticas**, mantendo
+  a qualidade. **84 testes verdes.** O "100%"
   (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o M13 costura corpo+previsão+curiosidade+memória+

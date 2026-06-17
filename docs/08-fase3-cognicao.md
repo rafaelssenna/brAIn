@@ -211,10 +211,46 @@ que o agente APRENDEU A VER, não rótulos abstratos.
 **Honesto:** 6 palavras, mundo de brinquedo. É o mecanismo, não fluência; português
 pleno pede outra escala (ou um híbrido).
 
+### M22 — Substrato esparso e dirigido a eventos ✅ (concluído)
+**Objetivo:** perseguir o cérebro pelo caminho CERTO, sem força bruta. O cérebro roda
+com <20W porque é ESPARSO (poucos neurônios ativos por vez) e dirigido a eventos (só
+quem dispara custa). Este marco mede esse princípio sobre a máquina de previsão (M4):
+um código latente esparso (k-winners-take-all) atinge a mesma qualidade gastando muito
+menos OPERAÇÕES SINÁPTICAS (SynOps). A moeda é a CONTAGEM de operações (independente de
+hardware, o "AC op" da literatura neuromórfica), NÃO o relógio.
+- [x] `src/brain/sparse_predictive.py`: `SparsePredictiveCoder` (herda do M4; k-WTA e/ou
+      L1 via soft-threshold; aprendizado local ΔW∝ε·rᵀ só nas colunas ativas) + `OpCounter`
+      (conta MACs denso vs dirigido a eventos) + fórmulas dos baselines densos.
+- [x] 7 testes — `tests/test_sparse_predictive.py` (total: **84 verdes**); inclui o teste
+      de degeneração (k=None, l1=0 ⇒ idêntico ao M4).
+
+**Resultados (`experiments/m22_sparse_efficient.py`):**
+- ✅ **Esparsidade cortical de verdade**: o `nonneg`/ReLU que já existia fica em **74%
+      ativo** (quase denso!); o k-WTA (k=2) traz para **12.5%** — faixa cortical. Ou seja,
+      o k-WTA **não é redundante** com o ReLU: a ablação decisiva passou.
+- ✅ **Qualidade preservada**: surpresa held-out **0.203 (denso) vs 0.238 (esparso)** —
+      levemente pior, perto do ótimo de subespaço, com **100% de discriminação** de
+      conceitos nos dois.
+- ✅ **Energia**: **~7.5× menos SynOps por inferência** que o denso pleno; e, honrando o
+      M6, **~5.5× menos SynOps ATÉ atingir a qualidade-alvo** (não é truque de "por passo").
+- ✅ **Fronteira de Pareto (onde QUEBRA)**: varrendo k, a discriminação fica 100% de k=2
+      a 16; em **k=1 (6.2% ativo) ela COLAPSA para 75%** — esparsidade agressiva demais
+      funde conceitos. O ponto-doce é k=2 (cortical, discriminação plena, energia mínima).
+
+**Honesto:** a moeda é OPERAÇÃO SINÁPTICA, não relógio — em Python/NumPy o laço esparso
+é até mais lento (o M6 já mostrou). Isto prova o **princípio de eficiência em miniatura**
+(esparsidade mantém a qualidade cortando operações); NÃO prova escala, nem wall-clock, nem
+eficiência biológica (estamos a ~9 ordens de magnitude do cérebro). O termo bottom-up Wᵀε
+é denso por natureza; o ganho limpo vem da previsão e do update dirigidos a eventos.
+
+**Significado:** o primeiro passo do programa "rumo ao cérebro pelo método, não pela força
+bruta". Próximos: rodar o organismo (M20/M21) sobre o substrato esparso (M23); event-driven
+de verdade + a fronteira honesta de hardware neuromórfico (M24).
+
 ### Próximos (horizonte distante)
-- Recursão / mensagens de tamanho variável; semântica mais rica; ancorar isto no
-  organismo integrado (M13) com aprendizado online; e, para linguagem plena,
-  provável híbrido. O "100%" segue sendo o norte.
+- M23: organismo (M20/M21) sobre o substrato esparso. M24: event-driven real + onde a
+  CPU/Python para e o neuromórfico começa. Recursão / mensagens de tamanho variável;
+  semântica mais rica; e, para linguagem plena, provável híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a
