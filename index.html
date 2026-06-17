@@ -21,6 +21,7 @@
     <a class="topbar__brand" href="#top">brAIn</a>
     <nav class="topbar__nav">
       <a href="#sobre">O que é</a>
+      <a href="#demo">Veja vivo</a>
       <a href="#fase-1">Fase 1</a>
       <a href="#fase-2">Fase 2</a>
       <a href="#fase-3">Fase 3</a>
@@ -58,6 +59,18 @@
       <p class="plain__honest">Sendo sincero desde já: isto não é o cérebro humano, e não vai
         virar um. É o paradigma certo, em escala pequena e crescente, feito com honestidade.
         Quando um resultado não se confirmava, a gente voltava atrás em vez de inventar.</p>
+    </section>
+
+    <!-- Demo interativa ao vivo -->
+    <section class="demo" id="demo">
+      <h2 class="plain__h">Veja um deles vivo</h2>
+      <p class="demo__hint">Passe o mouse pela caixa (ou toque, no celular): a criatura
+        persegue a luz. Os olhos acendem quando enxergam, e é isso que move as "pernas".</p>
+      <div class="demo__stage"><canvas id="brain-demo"></canvas></div>
+      <p class="demo__cap">Por baixo, neurônios de verdade (modelo LIF, o mesmo do primeiro
+        marco) ligados em cruz: o olho da esquerda aciona o motor da direita, e vice-versa.
+        Ninguém programou "vá até a luz"; o comportamento nasce da fiação. É o mecanismo do
+        marco de corpo e mundo, rodando ao vivo no seu navegador.</p>
     </section>
 
     <!-- Resumo técnico -->
@@ -150,5 +163,6 @@
   </div>
 
   <script src="site/app.js"></script>
+  <script src="site/demo.js"></script>
 </body>
 </html>
