@@ -1,154 +1,147 @@
 <!DOCTYPE html>
 <!--
-  brAIn — portfólio científico
-  Projeto de Rafael S. Senna (visão e direção); implementação assistida por IA.
+  brAIn — relato de projeto (formato artigo científico)
+  Projeto de Rafael Sena Roman (visão e direção); implementação assistida por IA.
+  Estética inspirada em publicações científicas (Distill.pub, arXiv, labs de pesquisa):
+  fundo claro, serifa para leitura, figuras numeradas, sobriedade, referências.
 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>brAIn — uma IA que nasce sem saber nada e aprende vivendo</title>
-  <meta name="description" content="brAIn: uma inteligência no paradigma do cérebro — neurônios spiking, plasticidade local, predictive coding, sem backprop. Do primeiro neurônio à comunicação ancorada, em 18 marcos verificados." />
-  <meta name="author" content="Rafael S. Senna" />
-  <meta property="og:title" content="brAIn — paradigma cerebral, do neurônio à linguagem" />
-  <meta property="og:description" content="18 marcos, 69 testes verdes: percepção, previsão, curiosidade, memória, conceitos, planejamento, visão e comunicação emergente — tudo do zero, sem backprop." />
-  <meta property="og:type" content="website" />
+  <title>brAIn — uma inteligência que aprende vivendo</title>
+  <meta name="description" content="Relato de projeto: brAIn, uma IA no paradigma do cérebro (neurônios spiking, plasticidade local, predictive coding, sem backprop). Do primeiro neurônio à comunicação ancorada, em 18 marcos verificados." />
+  <meta name="author" content="Rafael Sena Roman" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="site/style.css" />
 </head>
 <body>
-  <canvas id="neural-bg" aria-hidden="true"></canvas>
+  <!-- Barra de progresso de leitura -->
+  <div class="reading-bar" id="reading-bar" aria-hidden="true"></div>
 
-  <!-- Navegação -->
-  <header class="nav" id="nav">
-    <a class="nav__brand" href="#top">br<span>AI</span>n</a>
-    <nav class="nav__links">
-      <a href="#visao">Visão</a>
-      <a href="#jornada">Jornada</a>
-      <a href="#fronteira">Até onde</a>
-      <a href="https://github.com/rafaelssenna/brAIn" class="nav__repo" target="_blank" rel="noopener">GitHub ↗</a>
+  <header class="topbar" id="topbar">
+    <a class="topbar__brand" href="#top">brAIn</a>
+    <nav class="topbar__nav">
+      <a href="#resumo">Resumo</a>
+      <a href="#fase-1">Fase 1</a>
+      <a href="#fase-2">Fase 2</a>
+      <a href="#fase-3">Fase 3</a>
+      <a href="#fronteira">Fronteira</a>
+      <a href="#ref">Referências</a>
     </nav>
+    <a class="topbar__repo" href="https://github.com/rafaelssenna/brAIn" target="_blank" rel="noopener">GitHub</a>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="top">
-    <div class="hero__inner reveal">
-      <p class="hero__eyebrow">paradigma cerebral · sem backprop</p>
-      <h1 class="hero__title">br<span class="grad">AI</span>n</h1>
-      <p class="hero__tag">Uma inteligência que <strong>nasce sem saber nada</strong> e
-        <strong>aprende vivendo</strong> — como um cérebro, não como um Transformer.</p>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="#jornada">Ver a jornada</a>
-        <a class="btn btn--ghost" href="https://github.com/rafaelssenna/brAIn" target="_blank" rel="noopener">Código no GitHub</a>
-      </div>
-      <div class="stats" id="stats">
-        <div class="stat"><span class="stat__num" data-target="18">0</span><span class="stat__label">marcos</span></div>
-        <div class="stat"><span class="stat__num" data-target="69">0</span><span class="stat__label">testes verdes</span></div>
-        <div class="stat"><span class="stat__num" data-target="3">0</span><span class="stat__label">fases</span></div>
-        <div class="stat"><span class="stat__num" data-target="0">0</span><span class="stat__label">backprop</span></div>
-      </div>
-    </div>
-    <a class="scroll-cue" href="#visao" aria-label="rolar">▾</a>
-  </section>
+  <article class="paper" id="top">
 
-  <!-- Visão + Honestidade -->
-  <section class="section" id="visao">
-    <div class="container two-col">
-      <div class="reveal">
-        <h2 class="section__title">A visão</h2>
-        <p class="lead">As IAs dominantes hoje são <em>Transformers</em>: aprendem uma vez, num
-          treino congelado, e nunca mais mudam. O brAIn persegue o caminho oposto — o do cérebro.</p>
-        <ul class="bullets">
-          <li><b>Nasce ignorante.</b> Sem pré-treino, pesos aleatórios.</li>
-          <li><b>Aprende online, vivendo.</b> Cada experiência muda a rede.</li>
-          <li><b>Sem backpropagation.</b> Só regras locais (STDP, predictive coding).</li>
-          <li><b>Corporificado.</b> Sensores, ações, consequências — um laço fechado.</li>
-          <li><b>Prevê o mundo.</b> A espinha dorsal é minimizar a surpresa.</li>
-        </ul>
+    <!-- Cabeçalho do artigo -->
+    <header class="titleblock">
+      <p class="eyebrow">Relato de projeto · paradigma cerebral · sem backpropagation</p>
+      <h1 class="title">Uma inteligência que aprende vivendo</h1>
+      <p class="subtitle">Do primeiro neurônio à comunicação ancorada, em 18 marcos
+        verificados — construindo o cérebro como cérebro, não como Transformer.</p>
+      <div class="byline">
+        <span><b>Rafael Sena Roman</b> — visão, direção e arquitetura</span>
+        <span class="byline__sep">·</span>
+        <span>implementação assistida por IA</span>
+        <span class="byline__sep">·</span>
+        <span>Junho de 2026</span>
       </div>
-      <div class="reveal card-glass honesty">
-        <h3>A honestidade que sustenta a ambição</h3>
-        <p>Não vamos "espelhar 100% do cérebro humano" — ninguém consegue isso hoje. O "100%" é a
-          <b>estrela-guia</b>, não a entrega. A entrega é o <b>paradigma certo, em miniatura</b> e
-          crescente.</p>
-        <p class="honesty__ledger">E quando os dados não sustentaram uma afirmação, nós
-          <b>recuamos</b>: o "piso do ruído" do M4, os "estágios" do M5, a curiosidade que não
-          vence o acaso, a vetorização que não escala. <span>Ciência, não hype.</span></p>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Jornada (fases + marcos) -->
-  <section class="section" id="jornada">
-    <div class="container">
-      <h2 class="section__title center reveal">A jornada — 18 marcos</h2>
-      <p class="section__sub center reveal">Do primeiro neurônio à comunicação ancorada. Cada
-        marco tem artefato rodável, baseline e teste.</p>
-      <div id="phases"></div>
-    </div>
-  </section>
+    <!-- Abstract -->
+    <section class="abstract">
+      <h2 class="abstract__h">Resumo</h2>
+      <p>As IAs dominantes hoje são <em>Transformers</em>: aprendem uma vez, num treino
+        congelado, e nunca mais mudam. O <b>brAIn</b> persegue o caminho do cérebro —
+        nasce sem saber nada e aprende vivendo, com neurônios <em>spiking</em>,
+        plasticidade local e <em>predictive coding</em>, <b>sem backpropagation</b>.
+        Em três fases e 18 marcos, cada peça foi implementada do zero, validada contra
+        teoria e baseline, e submetida a verificação adversarial — recuando onde os dados
+        não a sustentaram. O resultado é a primeira demonstração ponta-a-ponta, em
+        miniatura e honesta, da integração que a literatura nomeou mas ninguém entregou:
+        perceber, prever, agir, ser curioso, lembrar, conceituar, planejar, ver e
+        comunicar com estrutura e significado ancorado.</p>
+    </section>
 
-  <!-- Até onde dá pra chegar -->
-  <section class="section" id="fronteira">
-    <div class="container">
-      <h2 class="section__title center reveal">Até onde dá pra chegar</h2>
-      <p class="section__sub center reveal">Sem ilusão — em três níveis honestos.</p>
-      <div class="tiers">
-        <div class="tier reveal">
-          <span class="tier__tag tier__tag--done">já alcançado</span>
-          <h3>A prova de conceito completa</h3>
-          <p>O arco inteiro do paradigma cerebral, em miniatura e verificado — a integração que
-            ninguém tinha entregue. <b>Esta é a conquista real.</b></p>
-        </div>
-        <div class="tier reveal">
-          <span class="tier__tag tier__tag--reach">alcançável com recursos</span>
-          <h3>Um agente "nível animal simples"</h3>
-          <p>Escalar (GPU/neuromórfico), mundos mais ricos, unir o substrato spiking ao organismo.
-            Um programa de pesquisa real, fundável.</p>
-        </div>
-        <div class="tier reveal">
-          <span class="tier__tag tier__tag--far">fora do alcance solo</span>
-          <h3>Cognição e linguagem plenas</h3>
-          <p>Ninguém chegou lá — nem os labs bilionários. Exige recursos enormes <em>e</em>
-            avanços não resolvidos, ou um híbrido. O "100%" é o norte, não a entrega.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Resultados em resumo -->
+    <section class="section" id="resumo">
+      <h2 class="h2"><span class="sec-no">§</span> Resultados em resumo</h2>
+      <p>O projeto vai do neurônio único até dois agentes que inventam uma língua
+        ancorada no que percebem. Métricas-chave:</p>
+      <ul class="keyfacts">
+        <li><b>18</b> marcos, em <b>3</b> fases</li>
+        <li><b>69</b> testes automatizados, todos verdes</li>
+        <li><b>−79%</b> de surpresa (predictive coding, M4)</li>
+        <li><b>100%</b> de acerto na língua emergente (M16), generalizando para o nunca-visto (M17)</li>
+        <li><b>0</b> uso de backpropagation</li>
+      </ul>
+      <p class="note">Princípio que sustentou tudo: mecanismo biologicamente plausível,
+        medir tudo, baseline sempre, ablação, e <b>recuar onde os dados não sustentam</b>.
+        Ciência, não hype — exemplos de recuos: o "piso do ruído" do M4, os "estágios"
+        do M5, a curiosidade que não vence o acaso, a vetorização que não escala.</p>
+    </section>
 
-  <!-- Método / paradigma -->
-  <section class="section section--tight">
-    <div class="container center reveal">
-      <h2 class="section__title">O paradigma, em peças</h2>
-      <div class="chips">
-        <span class="chip">neurônios spiking (LIF)</span>
-        <span class="chip">STDP</span>
-        <span class="chip">predictive coding</span>
-        <span class="chip">aprendizado local</span>
-        <span class="chip">embodiment</span>
-        <span class="chip">curiosidade (learning progress)</span>
-        <span class="chip">memória / replay</span>
-        <span class="chip">planejamento</span>
-        <span class="chip">symbol grounding</span>
-        <span class="chip chip--neg">sem backpropagation</span>
-      </div>
-    </div>
-  </section>
+    <!-- Fases (figuras numeradas via JS) -->
+    <section class="section" id="fase-1" data-phase></section>
+    <section class="section" id="fase-2" data-phase></section>
+    <section class="section" id="fase-3" data-phase></section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer__brand">br<span>AI</span>n</p>
-      <p class="footer__attr">Projeto de <b>Rafael S. Senna</b> — visão, direção e arquitetura.
-        Implementação <b>assistida por IA</b>. Ciência honesta, do primeiro neurônio à primeira
-        palavra ancorada.</p>
-      <p class="footer__links">
+    <!-- Fronteira -->
+    <section class="section" id="fronteira">
+      <h2 class="h2"><span class="sec-no">§</span> Até onde dá pra chegar</h2>
+      <p>Uma avaliação franca da trajetória, em três níveis:</p>
+      <ol class="tiers">
+        <li><b>Já alcançado (projeto solo).</b> A prova de conceito completa do paradigma
+          cerebral, em miniatura e verificada — a integração que ninguém tinha entregue.
+          Esta é a conquista real.</li>
+        <li><b>Alcançável com recursos modestos.</b> Escalar (GPU/neuromórfico), mundos mais
+          ricos, unir o substrato <em>spiking</em> ao organismo → um agente robusto nível
+          "animal simples". Um programa de pesquisa de verdade.</li>
+        <li><b>Fora do alcance solo.</b> Cognição e linguagem humanas plenas, emergentes do
+          paradigma puro. Ninguém chegou lá — nem os laboratórios financiados; exigiria
+          recursos enormes <em>e</em> avanços não resolvidos, ou um híbrido. O "100%" é a
+          estrela-guia, não a entrega de amanhã.</li>
+      </ol>
+    </section>
+
+    <!-- Métodos -->
+    <section class="section">
+      <h2 class="h2"><span class="sec-no">§</span> O paradigma, em peças</h2>
+      <p>Os mecanismos, todos biologicamente plausíveis e locais:</p>
+      <p class="taglist">
+        <span>neurônios spiking (LIF)</span><span>STDP</span><span>predictive coding</span><span>aprendizado local</span><span>embodiment</span><span>curiosidade (learning progress)</span><span>memória / replay</span><span>hierarquia</span><span>planejamento</span><span>symbol grounding</span><span class="taglist__neg">sem backpropagation</span>
+      </p>
+    </section>
+
+    <!-- Referências -->
+    <section class="section" id="ref">
+      <h2 class="h2"><span class="sec-no">§</span> Referências</h2>
+      <ol class="refs">
+        <li>Hodgkin, A. L., &amp; Huxley, A. F. (1952). A quantitative description of membrane current. <i>J. Physiol.</i></li>
+        <li>Bi, G., &amp; Poo, M. (1998). Synaptic modifications in cultured hippocampal neurons (STDP). <i>J. Neurosci.</i></li>
+        <li>Rao, R. P. N., &amp; Ballard, D. H. (1999). Predictive coding in the visual cortex. <i>Nature Neuroscience.</i></li>
+        <li>Olshausen, B. A., &amp; Field, D. J. (1996). Emergence of simple-cell receptive fields by sparse coding. <i>Nature.</i></li>
+        <li>Friston, K. (2010). The free-energy principle. <i>Nature Reviews Neuroscience.</i></li>
+        <li>Oudeyer, P.-Y., &amp; Kaplan, F. (2007). Intrinsic motivation systems (learning progress). <i>Frontiers in Neurorobotics.</i></li>
+        <li>Harnad, S. (1990). The symbol grounding problem. <i>Physica D.</i></li>
+        <li>Lewis, D. (1969). <i>Convention</i> (signaling games).</li>
+        <li>Steels, L. (2015). <i>The Talking Heads Experiment: Origins of Words and Meanings.</i></li>
+        <li>Lazaridou, A., et al. (2018). Emergence of linguistic communication from referential games. <i>ICLR.</i></li>
+      </ol>
+    </section>
+
+    <!-- Footer -->
+    <footer class="colophon">
+      <p><b>brAIn</b> — projeto de Rafael Sena Roman (visão, direção e arquitetura),
+        com implementação assistida por IA. Código aberto sob licença MIT.</p>
+      <p class="colophon__links">
         <a href="https://github.com/rafaelssenna/brAIn" target="_blank" rel="noopener">github.com/rafaelssenna/brAIn</a>
       </p>
-    </div>
-  </footer>
+    </footer>
+  </article>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true">

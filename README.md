@@ -6,7 +6,7 @@
 publicado via GitHub Pages a partir de `index.html` + `site/`. Após ativar (Settings → Pages → Source: GitHub Actions):
 **https://rafaelssenna.github.io/brAIn**
 
-> Projeto de **Rafael S. Senna** (visão, direção e arquitetura) — implementação assistida por IA. Ver [AUTHORS.md](AUTHORS.md).
+> Projeto de **Rafael Sena Roman** (visão, direção e arquitetura) — implementação assistida por IA. Ver [AUTHORS.md](AUTHORS.md).
 
 ## O que é isto
 

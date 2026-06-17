@@ -1,6 +1,6 @@
 # Autoria
 
-**brAIn** foi concebido, dirigido e arquitetado por **Rafael S. Senna** — a visão,
+**brAIn** foi concebido, dirigido e arquitetado por **Rafael Sena Roman** — a visão,
 as hipóteses, as decisões de rumo e o critério científico são dele.
 
 A **implementação** (código, experimentos, testes e documentação) foi feita **com
