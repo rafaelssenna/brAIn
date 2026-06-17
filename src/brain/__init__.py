@@ -34,10 +34,11 @@ from .planning import (GridWorld, WorldModel, explore_and_learn, plan,
                        run_planner, run_reactive)
 from .integrated import IntegratedBrain
 from .temporal import TemporalPredictiveCoder
-from .communication import SignalingGame, CompositionalGame, GroundedLanguageGame
+from .communication import SignalingGame, CompositionalGame, GroundedLanguageGame, LivedLanguageGame
 
 __all__ = [
     "TemporalPredictiveCoder", "SignalingGame", "CompositionalGame", "GroundedLanguageGame",
+    "LivedLanguageGame",
     "LIFPopulation", "fi_curve_theory", "STDPConnection", "LightWorld", "Vehicle",
     "PredictiveCoder", "IntrinsicMotivation", "select_region",
     "RingWorld", "IntegratedAgent", "ReplayBuffer", "HierarchicalPredictiveCoder",

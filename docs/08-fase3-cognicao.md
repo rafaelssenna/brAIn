@@ -127,10 +127,35 @@ APRENDEU A PERCEBER — não etiquetas dadas. E o grounding revela uma verdade r
 linguagem exige conceitos compatíveis; a percepção limita o que se pode dizer.
 **Honesto:** escala de brinquedo; não linguagem plena.
 
+### M19 — A língua nasce da vivência ✅ (concluído)
+**Objetivo:** fechar o laço percepção→linguagem. Os conceitos não são dados: cada
+agente APRENDE os seus, sozinho, com um predictive coder (M4/M9), e só então os
+dois inventam uma língua sobre esses conceitos vividos.
+- [x] `src/brain/communication.py`: `LivedLanguageGame` — joga sobre os mapas
+      objeto→conceito que cada agente aprendeu (não etiquetas dadas).
+- [x] 3 testes — `tests/test_lived.py` (total: **72 verdes**)
+
+**Resultados (`experiments/m19_lived_language.py`) — H7 confirmada:**
+- ✅ **A língua emerge de conceitos AUTO-APRENDIDOS**: quando os dois agentes
+      aprendem a distinguir os objetos, a comunicação vai do acaso (12%) a **100%**.
+      Pela 1ª vez os símbolos significam conceitos que o próprio agente formou pela
+      experiência, não rótulos que demos.
+- ✅ **Achado honesto (alinhamento)**: a comunicação acompanha o quanto o agente
+      mais fraco aprendeu a distinguir — **r = 0.97** entre a discriminabilidade de
+      conceitos de B e a acurácia, sempre sob o teto (y=x). Só se fala do que ambos
+      aprenderam a separar.
+
+**Significado:** é o laço completo — percepção (M4/M9, conceitos auto-aprendidos) →
+linguagem (M16/M18) — em miniatura. O mais perto do norte: cognição e comunicação
+nascendo juntas da vivência.
+**Honesto:** escala de brinquedo; o alinhamento dos conceitos depende de ambos
+aprenderem a separar as mesmas coisas (experiência compartilhada ajuda, mas o jogo
+de linguagem é que termina de alinhar).
+
 ### Próximos (horizonte distante)
-- Recursão / mensagens de tamanho variável; ancorar a comunicação no organismo
-  integrado (M13) com conceitos do M9 aprendidos online; semântica mais rica; e,
-  para linguagem plena, provável híbrido. O "100%" segue sendo o norte.
+- Recursão / mensagens de tamanho variável; semântica mais rica; ancorar isto no
+  organismo integrado (M13) com aprendizado online; e, para linguagem plena,
+  provável híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

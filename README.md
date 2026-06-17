@@ -61,8 +61,9 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   **emergente** (dois agentes inventam uma língua, 100%) · **M17** proto-sintaxe —
   código **composicional** que generaliza (100% vs 0% holístico) · **M18** símbolos
   **ancorados na percepção** (Harnad; comunicação limitada pelo que se distingue,
-  r=0.90). **69 testes verdes.** O "100%" (cognição/linguagem plenas) segue
-  distante — cada marco é um tijolo real e verificado.
+  r=0.90) · **M19** a língua nasce da **vivência** (conceitos auto-aprendidos →
+  língua 100%; comm acompanha o alinhamento, r=0.97). **72 testes verdes.** O "100%"
+  (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o M13 costura corpo+previsão+curiosidade+memória+
 > planejamento+hierarquia num agente só (rate-based). Mas o substrato **spiking**

@@ -197,3 +197,72 @@ class GroundedLanguageGame:
             if i in cands:
                 tot += 1.0 / len(cands)                 # ambíguo se o receptor funde objetos
         return tot / self.K
+
+
+class LivedLanguageGame:
+    """M19 — a língua nasce da VIVÊNCIA. Diferente do M18, os conceitos não são
+    dados: vêm da categorização que CADA agente aprendeu sozinho (um predictive
+    coder por agente). Passa-se aqui o resultado desse aprendizado: arrays
+    objeto -> conceito (a "leitura" que cada agente faz de cada objeto).
+
+      sender_concepts[o] = conceito que o FALANTE formou para o objeto o
+      receiver_concepts[o] = conceito que o OUVINTE formou para o objeto o
+
+    O jogo então faz emergir um vocabulário sobre esses conceitos vividos. Se um
+    agente aprendeu a confundir dois objetos (mesmo conceito), não há símbolo que
+    os separe — a comunicação esbarra no que cada um aprendeu a distinguir.
+    """
+
+    def __init__(self, sender_concepts, receiver_concepts, n_symbols=None,
+                 lr: float = 0.15, temp: float = 0.4, init_noise: float = 0.05, seed: int = 0):
+        self.cs = np.asarray(sender_concepts, dtype=int)
+        self.cr = np.asarray(receiver_concepts, dtype=int)
+        self.K = len(self.cs)
+        self.nCS = int(self.cs.max()) + 1
+        self.nCR = int(self.cr.max()) + 1
+        self.M = n_symbols or self.K
+        self.lr = lr; self.temp = temp
+        self.rng = np.random.default_rng(seed)
+        rn = lambda *s: init_noise * self.rng.standard_normal(s)
+        self.S = rn(self.nCS, self.M)        # conceito-do-falante -> símbolo
+        self.R = rn(self.M, self.nCR)        # símbolo -> conceito-do-ouvinte
+
+    def _sm(self, v):
+        z = np.exp((v - v.max()) / self.temp); return z / z.sum()
+
+    def sender_discrim(self):
+        return len(set(self.cs.tolist())) / self.K
+
+    def receiver_discrim(self):
+        return len(set(self.cr.tolist())) / self.K
+
+    def ceiling(self):
+        """Teto teórico: fração de objetos que AMBOS os agentes distinguem (cada um
+        com um conceito único para aquele objeto)."""
+        def unique_mask(c):
+            counts = {}
+            for v in c: counts[v] = counts.get(v, 0) + 1
+            return np.array([counts[v] == 1 for v in c])
+        return float(np.mean(unique_mask(self.cs) & unique_mask(self.cr)))
+
+    def play(self, o: int, learn: bool = True, explore: bool = True):
+        a = self.cs[o]
+        m = int(self.rng.choice(self.M, p=self._sm(self.S[a]))) if explore else int(np.argmax(self.S[a]))
+        cr = int(np.argmax(self.R[m]))
+        cands = [j for j in range(self.K) if self.cr[j] == cr]
+        guess = int(self.rng.choice(cands)) if cands else int(self.rng.integers(self.K))
+        reward = int(guess == o)
+        if learn:
+            self.R[m, self.cr[o]] += self.lr            # atenção conjunta
+            self.S[a, m] += self.lr if reward else -self.lr
+        return reward
+
+    def accuracy(self):
+        tot = 0.0
+        for o in range(self.K):
+            m = int(np.argmax(self.S[self.cs[o]]))
+            cr = int(np.argmax(self.R[m]))
+            cands = [j for j in range(self.K) if self.cr[j] == cr]
+            if o in cands:
+                tot += 1.0 / len(cands)
+        return tot / self.K
