@@ -19,6 +19,8 @@ M11: agência / planejamento (o primeiro "pensar").
 M13: organismo integrado (a costura final — tudo num laço só).
 M14: previsão temporal/sequencial (Fase 3 — rumo à cognição).
 M15: gramática (regras sequenciais). M16: comunicação emergente.
+M17: composicionalidade. M18: símbolos ancorados na percepção.
+M19: a língua nasce da vivência. M20: o organismo vivo (a costura da cognição).
 """
 
 from .neuron import LIFPopulation, fi_curve_theory
@@ -35,6 +37,7 @@ from .planning import (GridWorld, WorldModel, explore_and_learn, plan,
 from .integrated import IntegratedBrain
 from .temporal import TemporalPredictiveCoder
 from .communication import SignalingGame, CompositionalGame, GroundedLanguageGame, LivedLanguageGame
+from .living import LivingAgent
 
 __all__ = [
     "TemporalPredictiveCoder", "SignalingGame", "CompositionalGame", "GroundedLanguageGame",
@@ -44,5 +47,5 @@ __all__ = [
     "RingWorld", "IntegratedAgent", "ReplayBuffer", "HierarchicalPredictiveCoder",
     "SpikingPredictiveCoder",
     "GridWorld", "WorldModel", "explore_and_learn", "plan", "run_planner", "run_reactive",
-    "IntegratedBrain",
+    "IntegratedBrain", "LivingAgent",
 ]

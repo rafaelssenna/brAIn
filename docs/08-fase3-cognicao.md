@@ -152,6 +152,39 @@ nascendo juntas da vivência.
 aprenderem a separar as mesmas coisas (experiência compartilhada ajuda, mas o jogo
 de linguagem é que termina de alinhar).
 
+### M20 — O organismo vivo: a costura da cognição ✅ (concluído)
+**Objetivo:** num ÚNICO laço online, dois agentes ao mesmo tempo **percebem** e
+formam conceitos (M4/M9), **lembram** por replay (M8), são **curiosos** (learning
+progress, M5) e aprendem a **falar** (M16/M19) sobre o que percebem. A diferença
+para o M19: lá os conceitos eram aprendidos ANTES, offline; aqui percepção e
+linguagem nascem JUNTAS, vivendo. **Pergunta científica:** dá para ancorar a
+linguagem em conceitos que ainda estão se formando?
+- [x] `src/brain/living.py`: `LivingAgent` — junta predictive coder (percepção) +
+      replay buffer (memória) + matrizes símbolo↔conceito (linguagem) num agente só;
+      `learn_perception` devolve a surpresa para alimentar a curiosidade.
+- [x] 2 testes — `tests/test_living.py` (total: **74 verdes**)
+
+**Resultados (`experiments/m20_living_mind.py`):**
+- ✅ **Percepção e linguagem CO-EMERGEM no mesmo laço**: vivendo, a surpresa cai
+      **0.935 → 0.012** (aprendeu a ver) e a comunicação sobe **8% → 92%** (aprendeu
+      a falar) — sem etapas separadas, tudo online.
+- ✅ **A linguagem fica ATRÁS da percepção**: o domínio perceptual (surpresa domada)
+      assenta por volta do passo ~1200; a comunicação continua subindo bem depois
+      disso, só fechando perto do fim. Primeiro aprender a ver, depois aprender a
+      falar — exatamente a ordem esperada.
+- ✅ **Conceitos formados vivendo**: os campos receptivos do agente A (barras
+      orientadas) emergem do laço, não de treino prévio.
+
+**Honesto:** escala de brinquedo (6 objetos, D=64). Conceitos em formação são um
+**alvo móvel**: enquanto a percepção não assenta, a linguagem tem que perseguir
+representações que ainda mudam — por isso ela custa mais a travar. A medida ingênua
+de "objetos distinguidos" já nasce alta (códigos aleatórios separam por acaso); o
+sinal honesto de aprender a ver é a **surpresa caindo**, e é nela que a figura se apoia.
+
+**Significado:** é o organismo inteiro num laço só — perceber, lembrar, ter
+curiosidade e falar, todos da mesma vida. Fecha a Fase 3 com a costura da cognição:
+o mais perto que chegamos do norte em miniatura.
+
 ### Próximos (horizonte distante)
 - Recursão / mensagens de tamanho variável; semântica mais rica; ancorar isto no
   organismo integrado (M13) com aprendizado online; e, para linguagem plena,

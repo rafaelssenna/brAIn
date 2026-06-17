@@ -62,7 +62,10 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   código **composicional** que generaliza (100% vs 0% holístico) · **M18** símbolos
   **ancorados na percepção** (Harnad; comunicação limitada pelo que se distingue,
   r=0.90) · **M19** a língua nasce da **vivência** (conceitos auto-aprendidos →
-  língua 100%; comm acompanha o alinhamento, r=0.97). **72 testes verdes.** O "100%"
+  língua 100%; comm acompanha o alinhamento, r=0.97) · **M20** o **organismo vivo** —
+  num laço só, dois agentes percebem, lembram, são curiosos e falam ao mesmo tempo:
+  percepção e linguagem **co-emergem** (surpresa 0.935→0.012, comunicação 8%→92%), com
+  a linguagem ficando **atrás** da percepção. **74 testes verdes.** O "100%"
   (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o M13 costura corpo+previsão+curiosidade+memória+

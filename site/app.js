@@ -39,6 +39,8 @@
         { t: "Uma língua emergente", d: "Dois agentes inventam, do zero, uma língua para se entenderem. Passam a acertar 100% das vezes.", img: "m16_communication.png" },
         { t: "Frases novas", d: "A língua deles funciona até para combinações que nunca tinham visto. É a raiz da linguagem.", img: "m17_compositional.png" },
         { t: "Palavras com sentido", d: "As palavras passam a significar o que o agente realmente percebe. Só dá para falar do que os dois conseguem distinguir.", img: "m18_grounded.png" },
+        { t: "A língua nasce da vivência", d: "Cada agente aprende sozinho a reconhecer as coisas; depois os dois inventam uma língua sobre esses conceitos vividos, não sobre rótulos dados.", img: "m19_lived_language.png" },
+        { t: "Um organismo vivo", d: "Num laço só, dois agentes percebem, lembram, são curiosos e falam ao mesmo tempo. Primeiro aprendem a ver; a linguagem vem logo atrás.", img: "m20_living_mind.png" },
       ],
     },
   ];
