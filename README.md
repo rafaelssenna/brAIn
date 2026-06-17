@@ -1,12 +1,11 @@
 # brAIn
 
-> Uma inteligência que **nasce sem saber nada** e aprende vivendo — como um cérebro, não como um Transformer.
+> Uma inteligência que **nasce sem saber nada** e aprende vivendo, no jeito do cérebro, não como um Transformer.
 
-🌐 **Portfólio visual:** a jornada completa (18 marcos, com as figuras de cada experimento) vive no site —
-publicado via GitHub Pages a partir de `index.html` + `site/`. Após ativar (Settings → Pages → Source: GitHub Actions):
-**https://rafaelssenna.github.io/brAIn**
+🌐 **Site/portfólio:** a jornada completa (18 marcos, com as figuras de cada experimento) vive no site,
+em `index.html` + `site/`.
 
-> Projeto de **Rafael Sena Roman** (visão, direção e arquitetura) — implementação assistida por IA. Ver [AUTHORS.md](AUTHORS.md).
+> Projeto de **Rafael Sena Roman**. Código aberto sob licença MIT. Ver [AUTHORS.md](AUTHORS.md).
 
 ## O que é isto
 

@@ -1,7 +1,6 @@
 """brAIn — núcleo do cérebro artificial.
 
-Projeto de Rafael Sena Roman (visão, direção e arquitetura);
-implementação assistida por IA. Ver AUTHORS.md.
+Projeto de Rafael Sena Roman. Ver AUTHORS.md.
 
 Uma inteligência que nasce sem saber nada e aprende vivendo — paradigma
 cerebral (neurônios spiking, plasticidade local, predictive coding,

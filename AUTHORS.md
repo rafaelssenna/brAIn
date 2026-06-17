@@ -1,14 +1,10 @@
 # Autoria
 
-**brAIn** foi concebido, dirigido e arquitetado por **Rafael Sena Roman** — a visão,
-as hipóteses, as decisões de rumo e o critério científico são dele.
+**brAIn** é um projeto de **Rafael Sena Roman**: a visão, as hipóteses, o rumo e o
+critério científico são dele.
 
-A **implementação** (código, experimentos, testes e documentação) foi feita **com
-assistência de IA**, sob a direção do autor. O método de trabalho foi: o humano
-define o objetivo e o paradigma; a IA implementa, mede e reporta; o humano decide o
-próximo passo. Cada marco foi verificado por testes automatizados e, em vários
-casos, por revisão adversarial — e afirmações foram **recuadas quando os dados não
-as sustentaram**.
+Cada marco foi verificado por testes automatizados e, em vários casos, por revisão
+crítica, recuando quando os dados não sustentavam uma afirmação. Ciência honesta, do
+primeiro neurônio à primeira palavra com sentido.
 
-> Projeto humano, assistido por IA. Ciência honesta, do primeiro neurônio à
-> primeira palavra ancorada.
+Código aberto sob licença MIT.

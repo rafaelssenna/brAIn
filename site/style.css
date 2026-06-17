@@ -1,7 +1,6 @@
-/* brAIn — relato de projeto · estilo de publicação científica
-   Projeto de Rafael Sena Roman; implementação assistida por IA.
-   Referências estéticas: Distill.pub, arXiv, páginas de pesquisa (claro, serifa
-   para leitura, figuras numeradas que estouram além do texto, sobriedade). */
+/* brAIn: estilo do site (publicação científica). Projeto de Rafael Sena Roman.
+   Referências estéticas: Distill.pub, arXiv, páginas de pesquisa (sobriedade,
+   serifa para leitura, figuras numeradas, muito espaço em branco). */
 
 :root {
   color-scheme: dark;
@@ -53,8 +52,15 @@ body {
 .paper { max-width: var(--wide-w); margin: 0 auto; padding: 132px 24px 40px; }
 
 /* Tudo é centrado na medida de leitura, exceto as figuras (que estouram) */
-.titleblock, .abstract, .section > :not(.figgrid),
+.titleblock, .plain, .abstract, .section > :not(.figgrid),
 .colophon { max-width: var(--text-w); margin-left: auto; margin-right: auto; }
+
+/* ---------- Em poucas palavras (intro para leigos) ---------- */
+.plain { margin-top: 38px; }
+.plain__h { font-family: var(--sans); font-size: .8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--ink-faint); margin-bottom: 14px; }
+.plain p { font-size: 1.2rem; line-height: 1.7; margin-bottom: 18px; }
+.plain b { font-weight: 600; color: var(--ink); }
+.plain__honest { font-size: 1.02rem !important; color: var(--ink-soft); border-left: 2px solid var(--rule); padding-left: 18px; }
 
 /* ---------- Cabeçalho ---------- */
 .titleblock { text-align: left; padding-bottom: 30px; border-bottom: 1px solid var(--rule); }

@@ -1,5 +1,4 @@
-/* brAIn — relato de projeto · interações
-   Projeto de Rafael Sena Roman; implementação assistida por IA. */
+/* brAIn: interações do site. Projeto de Rafael Sena Roman. */
 
 (() => {
   "use strict";
@@ -7,39 +6,39 @@
   /* ===================== Dados dos marcos ===================== */
   const PHASES = [
     {
-      sec: "§1", name: "Os ingredientes",
-      intro: "Cada peça do paradigma cerebral, implementada do zero e validada contra teoria e baseline.",
+      sec: "§1", name: "As peças básicas",
+      intro: "Cada peça do paradigma cerebral, construída do zero e testada contra a teoria e o acaso.",
       milestones: [
-        { n: "M1", t: "Neurônio vivo", d: "Um neurônio LIF que dispara como os reais — a simulação bate com a curva f–I analítica.", img: "m1_living_neuron.png" },
-        { n: "M2", t: "Sinapse que aprende", d: "STDP e condicionamento pavloviano; o controle não-pareado não aprende — logo é associativo.", img: "m2_pavlov.png" },
-        { n: "M3", t: "Corpo e mundo", d: "Fototaxia: chega à fonte em 98% dos episódios vs 28% do acaso. O laço percepção–ação fecha.", img: "m3_embodiment.png" },
-        { n: "M4", t: "Máquina de previsão", d: "Predictive coding: surpresa −79%; campos receptivos emergem; regra local, sem backprop.", img: "m4_predictive.png" },
-        { n: "M5", t: "Curiosidade", d: "Learning progress: foge da 'TV chiando'. A novelty-seeking colapsa (98% presa no ruído).", img: "m5_development.png" },
-        { n: "M6", t: "Ablação e escala", d: "Aprendizado, inferência e capacidade são essenciais; vetorizar ingênuo não escala (resultado negativo honesto).", img: "m6_ablations.png" },
+        { t: "Um neurônio vivo", d: "Um neurônio simulado que dispara como os de verdade. O comportamento bate com a teoria.", img: "m1_living_neuron.png" },
+        { t: "A sinapse que aprende", d: "A conexão aprende por associação, como o cachorro de Pavlov. O grupo de controle não aprende, o que prova que é associação mesmo.", img: "m2_pavlov.png" },
+        { t: "Corpo e mundo", d: "Posto num corpo simples, o agente chega à fonte de 'comida' em 98% das vezes, contra 28% do acaso.", img: "m3_embodiment.png" },
+        { t: "Aprender a prever", d: "O agente aprende a antecipar o que vai sentir. A surpresa cai 79% e padrões surgem sozinhos.", img: "m4_predictive.png" },
+        { t: "Curiosidade", d: "Curiosidade do tipo certo: busca o que dá para aprender e ignora barulho puro, que prende as versões ingênuas.", img: "m5_development.png" },
+        { t: "O que é essencial", d: "Testes de remoção mostram o que importa: aprender, raciocinar sobre a entrada e ter capacidade. Acelerar na força bruta não resolve.", img: "m6_ablations.png" },
       ],
     },
     {
-      sec: "§2", name: "O organismo integrado",
-      intro: "Costurar as peças num único ser que percebe, age, lembra, conceitua, planeja e vê.",
+      sec: "§2", name: "O organismo",
+      intro: "Juntar as peças num organismo só, que percebe, age, lembra, forma conceitos, planeja e enxerga.",
       milestones: [
-        { n: "M7", t: "Laço integrado", d: "Corpo, previsão e curiosidade num agente só. Evita fisicamente o ruído 4×.", img: "m7_integrated.png" },
-        { n: "M8", t: "Memória / replay", d: "O replay vence o esquecimento (+0.44 → +0.004) e destrava a curiosidade (93%→99%).", img: "m8_memory.png" },
-        { n: "M9", t: "Hierarquia", d: "Conceitos emergem: a invariância de categoria sobe de 0.81 a 0.99 na camada do topo.", img: "m9_hierarchy.png" },
-        { n: "M10", t: "Substrato spiking", d: "Predictive coding em neurônios LIF; surpresa −82%. A fratura rate-vs-spiking, costurada.", img: "m10_spiking.png" },
-        { n: "M11", t: "Agência (planejar)", d: "Imagina futuros e planeja a rota: 100% vs 83% reativo. O primeiro 'pensar à frente'.", img: "m11_planning.png" },
-        { n: "M12", t: "Visão", d: "Detectores de borda orientados emergem da entrada visual — como no córtex visual V1.", img: "m12_vision.png" },
-        { n: "M13", t: "A costura final", d: "Tudo num laço só. Apenas o organismo integrado alcança o conteúdo atrás da parede (10.7% vs 0%).", img: "m13_integrated.png" },
+        { t: "Tudo junto", d: "Corpo, previsão e curiosidade num agente só. Ele foge do barulho quatro vezes mais que o acaso.", img: "m7_integrated.png" },
+        { t: "Memória", d: "Uma memória que repete experiências (como o sono faz) impede o agente de esquecer o que já aprendeu.", img: "m8_memory.png" },
+        { t: "Conceitos", d: "Conceitos surgem: exemplos diferentes de uma mesma categoria viram quase o mesmo 'pensamento' no topo.", img: "m9_hierarchy.png" },
+        { t: "Neurônios de verdade", d: "Tudo isso passa a rodar em neurônios que disparam de verdade, e ainda sem backpropagation.", img: "m10_spiking.png" },
+        { t: "Pensar antes de agir", d: "O agente imagina futuros e planeja a rota. Resolve um labirinto que o agente reativo não consegue.", img: "m11_planning.png" },
+        { t: "Visão", d: "Alimentado com imagens, ele desenvolve detectores de borda, parecidos com os do córtex visual humano.", img: "m12_vision.png" },
+        { t: "A costura final", d: "Tudo reunido num organismo único. Só ele alcança o que está escondido atrás de uma parede.", img: "m13_integrated.png" },
       ],
     },
     {
-      sec: "§3", name: "A cognição",
-      intro: "Prever no tempo, internalizar regras, e inventar uma língua ancorada na percepção.",
+      sec: "§3", name: "Os primeiros sinais de pensamento",
+      intro: "Prever no tempo, aprender regras e inventar uma forma de se comunicar com sentido.",
       milestones: [
-        { n: "M14", t: "Previsão temporal", d: "Aprende sequências no tempo e imagina a continuação correta — o substrato do pensar.", img: "m14_temporal.png" },
-        { n: "M15", t: "Gramática", d: "Aprende REGRAS (não uma sequência fixa) e gera frases novas 98% gramaticais.", img: "m15_grammar.png" },
-        { n: "M16", t: "Comunicação emergente", d: "Dois agentes inventam uma língua compartilhada do zero: do acaso a 100% de acerto.", img: "m16_communication.png" },
-        { n: "M17", t: "Composicionalidade", d: "O código composicional generaliza para combinações nunca vistas (100% vs 0% holístico).", img: "m17_compositional.png" },
-        { n: "M18", t: "Grounding", d: "Símbolos ancorados na percepção (Harnad). Só se comunica o que ambos distinguem (r=0.90).", img: "m18_grounded.png" },
+        { t: "Prever no tempo", d: "Aprende sequências ao longo do tempo e consegue imaginar como elas continuam.", img: "m14_temporal.png" },
+        { t: "Gramática", d: "Aprende as regras de uma pequena 'gramática' e cria frases novas que respeitam essas regras.", img: "m15_grammar.png" },
+        { t: "Uma língua emergente", d: "Dois agentes inventam, do zero, uma língua para se entenderem. Passam a acertar 100% das vezes.", img: "m16_communication.png" },
+        { t: "Frases novas", d: "A língua deles funciona até para combinações que nunca tinham visto. É a raiz da linguagem.", img: "m17_compositional.png" },
+        { t: "Palavras com sentido", d: "As palavras passam a significar o que o agente realmente percebe. Só dá para falar do que os dois conseguem distinguir.", img: "m18_grounded.png" },
       ],
     },
   ];
@@ -51,14 +50,14 @@
     if (!host) return;
     const figs = ph.milestones.map((m) => {
       figNo += 1;
-      const cap = `${m.n} — ${m.t}: ${m.d}`;
+      const cap = `Figura ${figNo}. ${m.t}. ${m.d}`;
       return `
-        <figure class="fig reveal">
-          <div class="fig__frame" data-img="site/img/${m.img}" data-cap="Figura ${figNo}. ${cap}">
-            <img loading="lazy" src="site/img/${m.img}" alt="${m.n} — ${m.t}" />
+        <figure class="fig">
+          <div class="fig__frame" data-img="site/img/${m.img}" data-cap="${cap}">
+            <img loading="lazy" src="site/img/${m.img}" alt="${m.t}" />
           </div>
           <figcaption><span class="fig__num">Figura ${figNo}.</span>
-            <span class="fig__title">${m.n} — ${m.t}.</span> ${m.d}</figcaption>
+            <span class="fig__title">${m.t}.</span> ${m.d}</figcaption>
         </figure>`;
     }).join("");
     host.innerHTML = `
@@ -71,7 +70,7 @@
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
-  document.querySelectorAll(".reveal, figure.fig").forEach((el) => { el.classList.add("reveal"); io.observe(el); });
+  document.querySelectorAll("figure.fig, .plain, .abstract").forEach((el) => { el.classList.add("reveal"); io.observe(el); });
 
   /* ===================== Barra de leitura + topo ===================== */
   const bar = document.getElementById("reading-bar");
