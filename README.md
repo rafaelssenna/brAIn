@@ -65,7 +65,9 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   língua 100%; comm acompanha o alinhamento, r=0.97) · **M20** o **organismo vivo** —
   num laço só, dois agentes percebem, lembram, são curiosos e falam ao mesmo tempo:
   percepção e linguagem **co-emergem** (surpresa 0.935→0.012, comunicação 8%→92%), com
-  a linguagem ficando **atrás** da percepção. **74 testes verdes.** O "100%"
+  a linguagem ficando **atrás** da percepção · **M21** aprende **palavras de português**
+  de verdade ancoradas no que percebe (nomear e apontar, 33%→100%; só nomeia o que
+  distingue, r=0.99). **77 testes verdes.** O "100%"
   (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o M13 costura corpo+previsão+curiosidade+memória+

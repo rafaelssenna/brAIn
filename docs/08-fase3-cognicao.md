@@ -185,6 +185,32 @@ sinal honesto de aprender a ver é a **surpresa caindo**, e é nela que a figura
 curiosidade e falar, todos da mesma vida. Fecha a Fase 3 com a costura da cognição:
 o mais perto que chegamos do norte em miniatura.
 
+### M21 — Palavras de PORTUGUÊS ancoradas na percepção ✅ (concluído)
+**Objetivo:** sair dos símbolos inventados e aprender PALAVRAS REAIS do português, do
+jeito de uma criança: o agente vê o mundo (barras em posições), forma seus conceitos
+sozinho (M4) e um "professor" diz a palavra certa junto (atenção conjunta). Aprende as
+duas direções da língua — NOMEAR (vê e diz a palavra) e APONTAR (ouve e aponta).
+- [x] `experiments/m21_portuguese.py` (reusa o `LivingAgent` do M20): vocabulário real
+      `topo, meio, base, esquerda, centro, direita` ancorado em conceitos auto-aprendidos.
+- [x] 3 testes — `tests/test_portuguese.py` (total: **77 verdes**)
+
+**Resultados:**
+- ✅ **Aprende as palavras vivendo**: nomear **33% → 100%** e compreender **31% → 100%**.
+      No fim ele vê `topo` e diz "topo", ouve "direita" e aponta o objeto certo — nas
+      seis palavras.
+- ✅ **A língua vem ATRÁS da percepção**: nomear/apontar só assentam depois que os
+      conceitos estabilizam (mesma assinatura do M20).
+- ✅ **Achado honesto (o teto perceptual)**: nomear só vai até onde ele DISTINGUE as
+      coisas — correlação **r = 0.99** entre discriminabilidade perceptual e acurácia ao
+      nomear, sempre sob o teto (y=x). Percepção pobre → ele confunde objetos e erra os
+      nomes. *Só se nomeia o que se percebe.*
+
+**Significado:** é o MECANISMO de aprender palavras como uma criança (grounding
+cross-situacional), agora com palavras de português de verdade. A língua significa o
+que o agente APRENDEU A VER, não rótulos abstratos.
+**Honesto:** 6 palavras, mundo de brinquedo. É o mecanismo, não fluência; português
+pleno pede outra escala (ou um híbrido).
+
 ### Próximos (horizonte distante)
 - Recursão / mensagens de tamanho variável; semântica mais rica; ancorar isto no
   organismo integrado (M13) com aprendizado online; e, para linguagem plena,
