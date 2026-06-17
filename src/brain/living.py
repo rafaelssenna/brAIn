@@ -15,17 +15,25 @@ from __future__ import annotations
 
 import numpy as np
 
-from .predictive import PredictiveCoder
+from .sparse_predictive import SparsePredictiveCoder
 from .memory import ReplayBuffer
 
 
 class LivingAgent:
-    """Um organismo que percebe, lembra e fala — tudo aprendido online."""
+    """Um organismo que percebe, lembra e fala — tudo aprendido online.
+
+    O substrato de percepção pode ser DENSO (padrão, idêntico ao M4) ou ESPARSO
+    (M22): passe `sparse_k` (k-winners-take-all) e/ou `l1` para rodar o organismo
+    com código cortical e menos operações sinápticas. Com `sparse_k=None, l1=0` o
+    comportamento é exatamente o do M20/M21 (sem regressão).
+    """
 
     def __init__(self, n_obs: int, n_latent: int, n_symbols: int,
                  lr_lang: float = 0.15, temp: float = 0.4,
-                 replay_every: int = 10, replay_batch: int = 8, seed: int = 0):
-        self.pc = PredictiveCoder(n_obs=n_obs, n_latent=n_latent, eta_w=0.05, seed=seed)
+                 replay_every: int = 10, replay_batch: int = 8, seed: int = 0,
+                 sparse_k: int | None = None, l1: float = 0.0):
+        self.pc = SparsePredictiveCoder(n_obs=n_obs, n_latent=n_latent, eta_w=0.05,
+                                        seed=seed, k_active=sparse_k, l1=l1)
         self.buffer = ReplayBuffer(300, n_obs, seed=seed)
         self.nL = n_latent
         self.M = n_symbols

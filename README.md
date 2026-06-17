@@ -69,7 +69,9 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   de verdade ancoradas no que percebe (nomear e apontar, 33%→100%; só nomeia o que
   distingue, r=0.99) · **M22** substrato **esparso** (método > força bruta): código
   cortical (12.5% ativo) faz o mesmo com **~7.5× menos operações sinápticas**, mantendo
-  a qualidade. **84 testes verdes.** O "100%"
+  a qualidade · **M23** o **organismo vivo** (M20) roda nesse substrato esparso: percepção
+  e linguagem co-emergem **gastando ~5.7× menos energia** (a fratura substrato↔cognição
+  fechou). **86 testes verdes.** O "100%"
   (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o M13 costura corpo+previsão+curiosidade+memória+

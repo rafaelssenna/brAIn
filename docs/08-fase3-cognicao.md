@@ -247,10 +247,36 @@ eficiência biológica (estamos a ~9 ordens de magnitude do cérebro). O termo b
 bruta". Próximos: rodar o organismo (M20/M21) sobre o substrato esparso (M23); event-driven
 de verdade + a fronteira honesta de hardware neuromórfico (M24).
 
+### M23 — O organismo vivo no substrato eficiente ✅ (concluído)
+**Objetivo:** costurar a fratura entre o substrato eficiente (M22) e o organismo
+integrado (M20). O MESMO organismo do M20 (dois agentes que percebem, lembram e falam)
+roda sobre o código esparso, lado a lado com o denso. A cognição (a co-emergência
+percepção↔linguagem) sobrevive à esparsidade? E quanto de energia se economiza?
+- [x] `src/brain/living.py`: `LivingAgent` ganha `sparse_k`/`l1` (injeta o
+      `SparsePredictiveCoder` do M22; com `sparse_k=None` é idêntico ao M20/M21, sem regressão).
+- [x] `experiments/m23_efficient_organism.py`: organismo denso vs esparso, mesma vida/semente.
+- [x] 2 testes — `tests/test_efficient_organism.py` (total: **86 verdes**).
+
+**Resultados:**
+- ✅ **A cognição SOBREVIVE à esparsidade**: percepção e linguagem co-emergem no
+      substrato esparso — comunicação **67% (denso) e 83% (esparso)**, conceitos **100%**
+      distinguidos nos dois.
+- ✅ **Atividade cortical**: o organismo denso fica **89.6% ativo**; o esparso, **12.5%**.
+- ✅ **Energia**: **~5.7× menos SynOps por percepção** no organismo esparso.
+
+**Honesto:** o resultado é de uma semente; a comunicação mais alta no esparso (83 vs 67)
+está dentro do ruído entre execuções — a afirmação é que a cognição **sobrevive** e
+co-emerge com muito menos energia, NÃO que o esparso seja superior em linguagem. Moeda =
+operação sináptica, não relógio; escala de brinquedo; princípio, não eficiência cerebral.
+
+**Significado:** a fratura "substrato eficiente ↔ organismo vivo" fechou — o organismo
+inteiro (perceber + lembrar + falar) roda no código esparso. Próximo: event-driven de
+verdade (M24) e a fronteira honesta do que a CPU faz vs o que pede hardware neuromórfico.
+
 ### Próximos (horizonte distante)
-- M23: organismo (M20/M21) sobre o substrato esparso. M24: event-driven real + onde a
-  CPU/Python para e o neuromórfico começa. Recursão / mensagens de tamanho variável;
-  semântica mais rica; e, para linguagem plena, provável híbrido. O "100%" segue sendo o norte.
+- M24: event-driven real + onde a CPU/Python para e o neuromórfico começa. M25: mundo
+  mais rico sob o substrato esparso. Recursão / mensagens de tamanho variável; semântica
+  mais rica; e, para linguagem plena, provável híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

@@ -43,6 +43,7 @@
         { t: "Um organismo vivo", d: "Num laço só, dois agentes percebem, lembram, são curiosos e falam ao mesmo tempo. Primeiro aprendem a ver; a linguagem vem logo atrás.", img: "m20_living_mind.png" },
         { t: "Palavras de português", d: "Como uma criança: vê o mundo e ouve a palavra certa junto. Aprende a dizer 'topo', 'centro', 'direita' do que vê, e a apontar quando ouve. Só nomeia o que consegue distinguir.", img: "m21_portuguese.png" },
         { t: "Eficiência como o cérebro", d: "O cérebro humano funciona com menos energia que uma lâmpada. Ativando poucos neurônios por vez, como no córtex, a rede faz o mesmo trabalho com cerca de 7 vezes menos operações. O caminho é o método, não a força bruta.", img: "m22_sparse_efficient.png" },
+        { t: "O organismo eficiente", d: "O mesmo organismo que percebe, lembra e fala, agora rodando nesse modo econômico. Ele continua aprendendo a ver e a se comunicar, gastando bem menos. Cérebro e economia juntos, no mesmo ser.", img: "m23_efficient_organism.png" },
       ],
     },
   ];
