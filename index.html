@@ -21,7 +21,7 @@
     <a class="topbar__brand" href="#top">brAIn</a>
     <nav class="topbar__nav">
       <a href="#sobre">O que é</a>
-      <a href="#demo">Veja vivo</a>
+      <a href="#agora">Demo ao vivo</a>
       <a href="#fase-1">Fase 1</a>
       <a href="#fase-2">Fase 2</a>
       <a href="#fase-3">Fase 3</a>
@@ -61,16 +61,26 @@
         Quando um resultado não se confirmava, a gente voltava atrás em vez de inventar.</p>
     </section>
 
-    <!-- Demo interativa ao vivo -->
-    <section class="demo" id="demo">
-      <h2 class="plain__h">Veja um deles vivo</h2>
-      <p class="demo__hint">Passe o mouse pela caixa (ou toque, no celular): a criatura
-        persegue a luz. Os olhos acendem quando enxergam, e é isso que move as "pernas".</p>
-      <div class="demo__stage"><canvas id="brain-demo"></canvas></div>
-      <p class="demo__cap">Por baixo, neurônios de verdade (modelo LIF, o mesmo do primeiro
-        marco) ligados em cruz: o olho da esquerda aciona o motor da direita, e vice-versa.
-        Ninguém programou "vá até a luz"; o comportamento nasce da fiação. É o mecanismo do
-        marco de corpo e mundo, rodando ao vivo no seu navegador.</p>
+    <!-- Demo do estágio atual: linguagem emergente -->
+    <section class="demo2" id="agora">
+      <h2 class="plain__h">O estágio atual: inventando uma língua</h2>
+      <p class="demo__hint">Esta é a coisa mais <b>avançada</b> que o brAIn faz hoje. Dois
+        agentes que não têm vocabulário nenhum precisam se entender. A cada rodada, um vê um
+        conceito (a bolinha colorida), inventa uma "palavra", e o outro tenta adivinhar.
+        Quando acertam, reforçam. Veja a língua nascer do zero.</p>
+      <div class="lang">
+        <div class="lang__bar">
+          <span>rodada <b id="ln-round">0</b></span>
+          <span>entendimento <b id="ln-acc">20%</b></span>
+          <button id="ln-reset" type="button">recomeçar</button>
+        </div>
+        <div class="lang__exchange" id="ln-ex"></div>
+        <div class="lang__lexwrap"><div class="lang__lex" id="ln-lex"></div></div>
+      </div>
+      <p class="demo__cap">É o mecanismo real do marco de comunicação: aprendizado por
+        recompensa somado à "atenção conjunta" (o ouvinte enxerga o que o falante queria
+        dizer). Ninguém define o vocabulário; ele emerge da necessidade de se entender. A
+        grade abaixo é o dicionário se formando: conceitos nas linhas, palavras nas colunas.</p>
     </section>
 
     <!-- Resumo técnico -->
@@ -163,6 +173,6 @@
   </div>
 
   <script src="site/app.js"></script>
-  <script src="site/demo.js"></script>
+  <script src="site/demo2.js"></script>
 </body>
 </html>
