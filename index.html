@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+  brAIn — portfólio científico
+  Projeto de Rafael S. Senna (visão e direção); implementação assistida por IA.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>brAIn — uma IA que nasce sem saber nada e aprende vivendo</title>
+  <meta name="description" content="brAIn: uma inteligência no paradigma do cérebro — neurônios spiking, plasticidade local, predictive coding, sem backprop. Do primeiro neurônio à comunicação ancorada, em 18 marcos verificados." />
+  <meta name="author" content="Rafael S. Senna" />
+  <meta property="og:title" content="brAIn — paradigma cerebral, do neurônio à linguagem" />
+  <meta property="og:description" content="18 marcos, 69 testes verdes: percepção, previsão, curiosidade, memória, conceitos, planejamento, visão e comunicação emergente — tudo do zero, sem backprop." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site/style.css" />
+</head>
+<body>
+  <canvas id="neural-bg" aria-hidden="true"></canvas>
+
+  <!-- Navegação -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top">br<span>AI</span>n</a>
+    <nav class="nav__links">
+      <a href="#visao">Visão</a>
+      <a href="#jornada">Jornada</a>
+      <a href="#fronteira">Até onde</a>
+      <a href="https://github.com/rafaelssenna/brAIn" class="nav__repo" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero__inner reveal">
+      <p class="hero__eyebrow">paradigma cerebral · sem backprop</p>
+      <h1 class="hero__title">br<span class="grad">AI</span>n</h1>
+      <p class="hero__tag">Uma inteligência que <strong>nasce sem saber nada</strong> e
+        <strong>aprende vivendo</strong> — como um cérebro, não como um Transformer.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#jornada">Ver a jornada</a>
+        <a class="btn btn--ghost" href="https://github.com/rafaelssenna/brAIn" target="_blank" rel="noopener">Código no GitHub</a>
+      </div>
+      <div class="stats" id="stats">
+        <div class="stat"><span class="stat__num" data-target="18">0</span><span class="stat__label">marcos</span></div>
+        <div class="stat"><span class="stat__num" data-target="69">0</span><span class="stat__label">testes verdes</span></div>
+        <div class="stat"><span class="stat__num" data-target="3">0</span><span class="stat__label">fases</span></div>
+        <div class="stat"><span class="stat__num" data-target="0">0</span><span class="stat__label">backprop</span></div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#visao" aria-label="rolar">▾</a>
+  </section>
+
+  <!-- Visão + Honestidade -->
+  <section class="section" id="visao">
+    <div class="container two-col">
+      <div class="reveal">
+        <h2 class="section__title">A visão</h2>
+        <p class="lead">As IAs dominantes hoje são <em>Transformers</em>: aprendem uma vez, num
+          treino congelado, e nunca mais mudam. O brAIn persegue o caminho oposto — o do cérebro.</p>
+        <ul class="bullets">
+          <li><b>Nasce ignorante.</b> Sem pré-treino, pesos aleatórios.</li>
+          <li><b>Aprende online, vivendo.</b> Cada experiência muda a rede.</li>
+          <li><b>Sem backpropagation.</b> Só regras locais (STDP, predictive coding).</li>
+          <li><b>Corporificado.</b> Sensores, ações, consequências — um laço fechado.</li>
+          <li><b>Prevê o mundo.</b> A espinha dorsal é minimizar a surpresa.</li>
+        </ul>
+      </div>
+      <div class="reveal card-glass honesty">
+        <h3>A honestidade que sustenta a ambição</h3>
+        <p>Não vamos "espelhar 100% do cérebro humano" — ninguém consegue isso hoje. O "100%" é a
+          <b>estrela-guia</b>, não a entrega. A entrega é o <b>paradigma certo, em miniatura</b> e
+          crescente.</p>
+        <p class="honesty__ledger">E quando os dados não sustentaram uma afirmação, nós
+          <b>recuamos</b>: o "piso do ruído" do M4, os "estágios" do M5, a curiosidade que não
+          vence o acaso, a vetorização que não escala. <span>Ciência, não hype.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jornada (fases + marcos) -->
+  <section class="section" id="jornada">
+    <div class="container">
+      <h2 class="section__title center reveal">A jornada — 18 marcos</h2>
+      <p class="section__sub center reveal">Do primeiro neurônio à comunicação ancorada. Cada
+        marco tem artefato rodável, baseline e teste.</p>
+      <div id="phases"></div>
+    </div>
+  </section>
+
+  <!-- Até onde dá pra chegar -->
+  <section class="section" id="fronteira">
+    <div class="container">
+      <h2 class="section__title center reveal">Até onde dá pra chegar</h2>
+      <p class="section__sub center reveal">Sem ilusão — em três níveis honestos.</p>
+      <div class="tiers">
+        <div class="tier reveal">
+          <span class="tier__tag tier__tag--done">já alcançado</span>
+          <h3>A prova de conceito completa</h3>
+          <p>O arco inteiro do paradigma cerebral, em miniatura e verificado — a integração que
+            ninguém tinha entregue. <b>Esta é a conquista real.</b></p>
+        </div>
+        <div class="tier reveal">
+          <span class="tier__tag tier__tag--reach">alcançável com recursos</span>
+          <h3>Um agente "nível animal simples"</h3>
+          <p>Escalar (GPU/neuromórfico), mundos mais ricos, unir o substrato spiking ao organismo.
+            Um programa de pesquisa real, fundável.</p>
+        </div>
+        <div class="tier reveal">
+          <span class="tier__tag tier__tag--far">fora do alcance solo</span>
+          <h3>Cognição e linguagem plenas</h3>
+          <p>Ninguém chegou lá — nem os labs bilionários. Exige recursos enormes <em>e</em>
+            avanços não resolvidos, ou um híbrido. O "100%" é o norte, não a entrega.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Método / paradigma -->
+  <section class="section section--tight">
+    <div class="container center reveal">
+      <h2 class="section__title">O paradigma, em peças</h2>
+      <div class="chips">
+        <span class="chip">neurônios spiking (LIF)</span>
+        <span class="chip">STDP</span>
+        <span class="chip">predictive coding</span>
+        <span class="chip">aprendizado local</span>
+        <span class="chip">embodiment</span>
+        <span class="chip">curiosidade (learning progress)</span>
+        <span class="chip">memória / replay</span>
+        <span class="chip">planejamento</span>
+        <span class="chip">symbol grounding</span>
+        <span class="chip chip--neg">sem backpropagation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__brand">br<span>AI</span>n</p>
+      <p class="footer__attr">Projeto de <b>Rafael S. Senna</b> — visão, direção e arquitetura.
+        Implementação <b>assistida por IA</b>. Ciência honesta, do primeiro neurônio à primeira
+        palavra ancorada.</p>
+      <p class="footer__links">
+        <a href="https://github.com/rafaelssenna/brAIn" target="_blank" rel="noopener">github.com/rafaelssenna/brAIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="fechar">×</button>
+    <figure class="lightbox__fig">
+      <img id="lightbox-img" alt="" />
+      <figcaption id="lightbox-cap"></figcaption>
+    </figure>
+  </div>
+
+  <script src="site/app.js"></script>
+</body>
+</html>
