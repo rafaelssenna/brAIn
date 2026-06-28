@@ -84,15 +84,21 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   o modelo de transição vivendo, a curiosidade escolhe a meta, o **planejamento** traça a
   rota (contornando a parede), percebe, lembra e **nomeia** (atenção conjunta). Efeito de
   integração puro: **só quem planeja a rota alcança, percebe E nomeia o objeto atrás da
-  parede** (nomeia C 100% vs 0% reativo; vê C com surpresa 0.003 vs 0.49). **101 testes verdes.**
+  parede** (nomeia C 100% vs 0% reativo; vê C com surpresa 0.003 vs 0.49) · **M27** a
+  **primeira FRASE ancorada, aprendida ouvindo** — o agente percebe uma cena (forma×posição)
+  dos pixels e aprende a montar/entender uma frase de 2 palavras só ouvindo, descobrindo o
+  grounding E a ordem das palavras. O **mesmo cérebro aprende português E inglês** (ordens
+  diferentes), produz/entende 100% e **generaliza** para frases nunca vistas; sem ordem fixa
+  não aprende (controle). Falar começando, não decorar texto. **106 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o
 > **M25** deu **corpo** a ele (dois agentes negociando a língua por encontro), e o **M26**
-> deu **planejamento num mundo 2D** com paredes (perceber+planejar+mover+lembrar+curiosidade+
-> nomear). Mas cada marco isola UMA dimensão: o M26 usa **professor** para a língua (não dois
-> agentes), e ainda **não** existe um único agente com corpo 2D + planejamento + dois agentes
-> negociando + substrato spiking/esparso, tudo junto — unir tudo é o M27 (futuro). E
-> raciocínio/linguagem plenos são a *estrela-guia emergente*
-> ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido, verificado,
-> e recuado onde os dados não sustentaram.
+> deu **planejamento num mundo 2D** com paredes, e o **M27** deu a **primeira FRASE** (sair
+> de palavra solta para palavras com estrutura, em PT e EN). Mas cada marco isola dimensões:
+> a frase do M27 tem 2 palavras de tamanho fixo (não recursão, não fluência) e é aprendida de
+> um **professor** (não negociada entre dois agentes); e ainda **não** existe um único agente
+> com corpo 2D + planejamento + frases + substrato spiking/esparso, tudo junto — unir tudo e
+> enriquecer a frase é futuro (M28+). E raciocínio/linguagem plenos são a *estrela-guia
+> emergente* ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido,
+> verificado, e recuado onde os dados não sustentaram.

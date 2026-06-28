@@ -380,11 +380,48 @@ o M25) — dois corpos curiosos raramente se encontram na mesma célula num grid
 então o professor é o caminho honesto para isolar o efeito do planejamento sobre a língua. É
 o MECANISMO do organismo, não um cérebro pronto.
 
+### M27 — A primeira FRASE ancorada, aprendida ouvindo (PT e EN) ✅ (concluído)
+**Objetivo:** o brAIn grudava PALAVRAS soltas na percepção (M21). Mas falar é montar
+FRASES com estrutura. Este marco dá o passo: o agente PERCEBE uma cena de dois atributos
+(uma FORMA × uma POSIÇÃO, em pixels), forma seus conceitos sozinho (M4) e aprende, SÓ
+OUVINDO, a produzir e entender uma frase de duas palavras que a descreve — descobrindo o
+GROUNDING (palavra↔atributo) E a SINTAXE (qual posição da frase carrega qual papel).
+**O ponto central do foco "qualquer idioma":** o MESMO mecanismo aprende ordens diferentes
+(PT `[forma][posição]` = "barra topo"; EN `[posição][forma]` = "top bar") só vivendo na língua.
+**Pergunta científica (H10):** dá para aprender a primeira frase com estrutura — grounding +
+ordem de palavras — só ouvindo, e o mesmo cérebro serve para idiomas de ordens diferentes?
+- [x] `src/brain/grounded_sentence.py`: `GroundedSentenceLearner` — aprende, por slot da
+      frase, o mapa palavra↔atributo e qual PAPEL (forma/posição) o slot carrega (descoberto,
+      não dado). `make_language(order)` monta frases de um idioma; `PT_ORDER`/`EN_ORDER`.
+- [x] 5 testes — `tests/test_grounded_sentence.py` (total: **106 verdes**).
+
+**Resultados (`experiments/m27_grounded_sentence.py`):**
+- ✅ **Percepção REAL**: o agente forma seus conceitos de forma e posição dos PIXELS
+      (distingue formas 100%, posições 100%) — a frase gruda no que ele percebe, não em ids.
+- ✅ **O MESMO mecanismo aprende PT E EN**: produzir/entender **100% nos dois**, com a ORDEM
+      aprendida diferente em cada (`(forma,posição)` no PT, `(posição,forma)` no EN). Vê a
+      barra horizontal no topo → PT "barraH topo", EN "top barraH".
+- ✅ **GENERALIZA (produtividade)**: treina em 6 de 9 combinações, monta frases certas para
+      as 3 **nunca vistas** — **100%**. Os símbolos viraram atributos componíveis (como M17).
+- ✅ **Baseline honesto (estrutura real)**: se o idioma EMBARALHA a ordem a cada frase (sem
+      regra fixa), entender despenca (**~64%** vs 100%) — prova que aprende SINTAXE, não decora.
+
+**Significado:** é a primeira FRASE — sair de palavra solta para palavras com ESTRUTURA,
+ancoradas no que percebe, aprendida ouvindo. E o mais perto do norte "qualquer idioma": o
+mesmo cérebro aprende a ordem de línguas diferentes só vivendo nelas. É falar começando, não
+decorar texto: o oposto do chatbot (que congela e não ancora).
+
+**Honesto:** escala de brinquedo — frase de 2 palavras, tamanho fixo, poucos atributos. É o
+MECANISMO da sintaxe ancorada (como uma criança junta as 2 primeiras palavras), NÃO fluência,
+NÃO recursão, NÃO frases de tamanho variável (horizonte distante, provável híbrido). As
+palavras de forma/posição são disjuntas, então o slot dá pista do papel — realista (o
+aprendiz usa a palavra para inferir a estrutura), mas é o caso mais simples da sintaxe.
+
 ### Próximos (horizonte distante)
-- M27: unir TUDO num agente só — corpo 2D + planejamento + **dois agentes negociando a
-  língua** (M25) + substrato spiking+esparso (M24/M22) ao mesmo tempo; event-driven real e
-  a fronteira CPU↔neuromórfico; mundo mais rico. Recursão / mensagens de tamanho variável;
-  semântica mais rica; e, para linguagem plena, provável híbrido. O "100%" segue sendo o norte.
+- M28: frases mais ricas (mais slots, tamanho variável, talvez recursão simples) e DOIS
+  agentes negociando frases (não professor); unir TUDO num agente só — corpo 2D + planejamento
+  + frases + substrato spiking/esparso. Semântica mais profunda; para linguagem plena,
+  provável híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a
