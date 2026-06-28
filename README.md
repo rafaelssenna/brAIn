@@ -89,16 +89,22 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   dos pixels e aprende a montar/entender uma frase de 2 palavras só ouvindo, descobrindo o
   grounding E a ordem das palavras. O **mesmo cérebro aprende português E inglês** (ordens
   diferentes), produz/entende 100% e **generaliza** para frases nunca vistas; sem ordem fixa
-  não aprende (controle). Falar começando, não decorar texto. **106 testes verdes.**
+  não aprende (controle). Falar começando, não decorar texto · **M28** **conversa emergente
+  com frases** — dois agentes inventam, do zero e **sem professor**, uma língua com frases
+  (forma×posição) só para se entenderem: o entendimento mútuo emerge (acaso 11% → 100%), o
+  código **composicional generaliza** para cenas nunca ditas (75% vs 0% holístico), e a
+  **ordem das palavras emerge consistente entre os dois** (uma gramática comum, arbitrária
+  entre execuções como línguas humanas diferem). Do descrever ao conversar. **111 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o
 > **M25** deu **corpo** a ele (dois agentes negociando a língua por encontro), e o **M26**
 > deu **planejamento num mundo 2D** com paredes, e o **M27** deu a **primeira FRASE** (sair
-> de palavra solta para palavras com estrutura, em PT e EN). Mas cada marco isola dimensões:
-> a frase do M27 tem 2 palavras de tamanho fixo (não recursão, não fluência) e é aprendida de
-> um **professor** (não negociada entre dois agentes); e ainda **não** existe um único agente
-> com corpo 2D + planejamento + frases + substrato spiking/esparso, tudo junto — unir tudo e
-> enriquecer a frase é futuro (M28+). E raciocínio/linguagem plenos são a *estrela-guia
-> emergente* ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido,
-> verificado, e recuado onde os dados não sustentaram.
+> de palavra solta para palavras com estrutura, em PT e EN), e o **M28** fez dois agentes
+> **conversarem com frases sem professor** (língua e gramática emergentes). Mas cada marco
+> isola dimensões: as frases têm 2 palavras de tamanho fixo (não recursão, não fluência); a
+> generalização emergente é parcial (75%); e ainda **não** existe um único agente com corpo
+> 2D + planejamento + conversa + substrato spiking/esparso, tudo junto — unir tudo e enriquecer
+> a frase (3+ atributos, turnos, recursão) é futuro (M29+). E raciocínio/linguagem plenos são a
+> *estrela-guia emergente* ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas.
+> Tudo medido, verificado, e recuado onde os dados não sustentaram.

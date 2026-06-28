@@ -28,6 +28,7 @@ M24: o organismo vivo percebendo com neurônios que disparam (a cognição sobre
 M25: o organismo corporificado que fala (corpo + percepção + curiosidade + memória + linguagem num laço).
 M26: o organismo que planeja rotas num mundo 2D e fala (planejar + contornar paredes + nomear o que alcança).
 M27: a primeira frase ancorada, aprendida ouvindo (forma+posição; mesmo mecanismo em PT e EN).
+M28: conversa emergente com frases — dois agentes inventam uma língua composicional sem professor.
 """
 
 from .neuron import LIFPopulation, fi_curve_theory
@@ -50,6 +51,7 @@ from .embodied_language import EmbodiedLanguageAgent, communication_accuracy
 from .planning_language import PlanningLanguageAgent
 from .grounded_sentence import (GroundedSentenceLearner, make_language,
                                 PT_ORDER, EN_ORDER)
+from .emergent_sentence import EmergentSentenceGame
 
 __all__ = [
     "TemporalPredictiveCoder", "SignalingGame", "CompositionalGame", "GroundedLanguageGame",
@@ -64,4 +66,5 @@ __all__ = [
     "EmbodiedLanguageAgent", "communication_accuracy",
     "PlanningLanguageAgent",
     "GroundedSentenceLearner", "make_language", "PT_ORDER", "EN_ORDER",
+    "EmergentSentenceGame",
 ]

@@ -417,11 +417,46 @@ NÃO recursão, NÃO frases de tamanho variável (horizonte distante, provável 
 palavras de forma/posição são disjuntas, então o slot dá pista do papel — realista (o
 aprendiz usa a palavra para inferir a estrutura), mas é o caso mais simples da sintaxe.
 
+### M28 — Conversa emergente com FRASES (do descrever ao conversar) ✅ (concluído)
+**Objetivo:** o M27 aprendeu a primeira frase OUVINDO um professor (que já sabia a resposta).
+Conversar é dois cérebros se entendendo SEM professor — coordenando do zero, como dois bebês
+inventando uma língua. Este marco dá o passo: dois agentes inventam, juntos, uma mini-língua
+com FRASES de duas palavras (forma × posição) só para se entenderem sobre cenas.
+**Pergunta científica (H11):** quando dois cérebros PRECISAM se coordenar, emerge uma língua
+com FRASES — vocabulário E uma ORDEM de palavras consistente entre eles? E o código
+composicional GENERALIZA para cenas que nunca disseram um ao outro?
+- [x] `src/brain/emergent_sentence.py`: `EmergentSentenceGame` — dois agentes simétricos
+      (falam e ouvem); jogo de referência com frases de 2 slots; sem professor (reforço por
+      sucesso + atenção conjunta, M16). O PAPEL de cada slot (forma/posição) emerge por
+      EXCLUSIVIDADE MÚTUA (os slots competem pelos papéis), então a frase nunca colapsa.
+      `mode='compositional'` (símbolo por atributo) vs `'holistic'` (decora a frase inteira).
+- [x] 5 testes — `tests/test_emergent_sentence.py` (total: **111 verdes**).
+
+**Resultados (`experiments/m28_emergent_sentence.py`) — média de 8 sementes:**
+- ✅ **A conversa EMERGE sem professor**: entendimento mútuo do acaso (11%) a **100%** —
+      dois agentes se coordenam sozinhos sobre uma língua de frases.
+- ✅ **Composicional GENERALIZA; holístico decora**: nas cenas NUNCA ditas, composicional
+      **75%** vs holístico **0%** (treino 100% em ambos). A estrutura é o que dá produtividade.
+- ✅ **A ORDEM das palavras EMERGE consistente entre os dois agentes**: em **100%** das
+      execuções os dois convergem para a MESMA ordem (uma gramática comum). E a ordem é
+      ARBITRÁRIA entre execuções (5/8 sementes "forma+posição", 3/8 "posição+forma") —
+      como línguas humanas diferem, mas cada conversa é internamente coerente.
+
+**Significado:** é o passo de "descrever" para "conversar". Pela primeira vez no projeto, dois
+cérebros inventam uma língua com FRASES (não só palavras, M16) — com vocabulário E gramática
+(ordem) — só pela necessidade de se entender, sem ninguém ensinar. Composicional, então
+produtiva. É conversar começando, não decorar texto.
+
+**Honesto:** escala de brinquedo (frase de 2 palavras, tamanho fixo, poucos atributos); a
+generalização sem professor é parcial (75%, não 100% — coordenar é mais difícil que ouvir um
+professor). É o MECANISMO da conversa composicional emergente, NÃO fluência, NÃO recursão,
+NÃO tamanho variável — horizonte distante, provável híbrido.
+
 ### Próximos (horizonte distante)
-- M28: frases mais ricas (mais slots, tamanho variável, talvez recursão simples) e DOIS
-  agentes negociando frases (não professor); unir TUDO num agente só — corpo 2D + planejamento
-  + frases + substrato spiking/esparso. Semântica mais profunda; para linguagem plena,
-  provável híbrido. O "100%" segue sendo o norte.
+- M29: frases mais ricas (3+ atributos, tamanho variável, talvez recursão simples) e diálogo
+  com TURNOS (pergunta/resposta); unir TUDO num agente só — corpo 2D + planejamento + conversa
+  + substrato spiking/esparso. Semântica mais profunda; para linguagem plena, provável híbrido.
+  O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a
