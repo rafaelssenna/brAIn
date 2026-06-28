@@ -74,14 +74,19 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   fechou) · **M24** o **organismo vivo percebe com neurônios que DISPARAM** — o substrato
   spiking (M10) entra dentro do organismo: percebendo por spikes reais, a surpresa cai
   0.93→0.068 e a comunicação co-emerge (75%), com a esparsidade (40% ativo) **emergindo
-  sozinha** do limiar do disparo. A cognição **sobrevive aos spikes**. **91 testes verdes.**
+  sozinha** do limiar do disparo. A cognição **sobrevive aos spikes** · **M25** o
+  **organismo CORPORIFICADO que fala** — costura as duas metades que viviam separadas:
+  dois organismos com **corpo** navegam um mundo por curiosidade, percebem, lembram e
+  **falam**, alinhando a língua só quando se **encontram** (atenção conjunta corporificada).
+  A linguagem emerge mesmo quando ver custa andar (acaso 17% → ~75%), **gated pelos
+  encontros**: perceber+mover+lembrar+ser curioso+falar, num laço só. **96 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** fez o substrato **spiking** (M10) rodar dentro do
-> *organismo vivo* (a linha M20: perceber+lembrar+falar) — a cognição sobrevive aos
-> spikes. Mas o **agente integrado M13** (corpo+planejamento+navegação+hierarquia,
-> rate-based) é um caminho de código distinto e **ainda não** percebe por spikes;
-> unir tudo (corpo+spiking+esparso+linguagem) num só agente segue trabalho futuro.
-> E raciocínio/linguagem são a *estrela-guia emergente*
-> ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido,
-> verificado, e recuado onde os dados não sustentaram.
+> *organismo vivo*, e o **M25** deu **corpo** a ele (perceber+mover+lembrar+curiosidade+
+> falar num laço). Mas a unificação PLENA — corpo + spiking + esparso + **planejamento**
+> (o `GridWorld` com paredes do M11/M13) + linguagem, tudo num só agente — ainda não
+> existe: o M25 usa o anel (`RingWorld`) e o "encontro" é co-localização simples, não
+> percepção mútua rica. Unir tudo segue trabalho futuro. E raciocínio/linguagem são a
+> *estrela-guia emergente* ([docs/01](docs/01-visao-e-hipotese.md)), não entregas
+> próximas. Tudo medido, verificado, e recuado onde os dados não sustentaram.

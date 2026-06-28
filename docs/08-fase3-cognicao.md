@@ -311,9 +311,43 @@ sobre spikes reais EM MINIATURA; não prova escala nem eficiência biológica.
 que sustenta a linguagem deixou de ser uma taxa abstrata e passou a EMERGIR de neurônios
 que disparam. A fratura spiking↔cognição (aberta desde o M10/M13) fechou em miniatura.
 
+### M25 — O organismo CORPORIFICADO que fala ✅ (concluído)
+**Objetivo:** costurar as duas metades do cérebro que viviam separadas. Até aqui havia
+um agente COM CORPO (M7/M13: navega, percebe, é curioso, lembra) que era MUDO, e um
+agente que FALA (M20→M24: percebe com spikes, lembra, fala) que não tinha CORPO (os
+objetos chegavam até ele). Um cérebro humano é UM organismo só. Aqui dois organismos
+COMPLETOS vivem num anel de lugares: cada um tem corpo, navega por CURIOSIDADE (M5),
+percebe o objeto de onde está (M4/M24), lembra (M8) e fala (M16/M21) — e só alinham a
+língua quando se ENCONTRAM no mesmo lugar (atenção conjunta corporificada).
+- [x] `src/brain/embodied_language.py`: `EmbodiedLanguageAgent` — monta o `LivingAgent`
+      (M24, percepção+memória+linguagem) num CORPO que vive no `RingWorld` (M7), com a
+      `IntrinsicMotivation` (M5) guiando a navegação. Aceita `spiking=True`/`sparse_k`.
+- [x] 5 testes — `tests/test_embodied_language.py` (total: **96 verdes**).
+
+**Resultados (`experiments/m25_embodied_language.py`):**
+- ✅ **O organismo inteiro vive num laço só**: percebe (surpresa **0.90 → 0.010**),
+      distingue **100%** dos objetos, navega o mundo por curiosidade e fala.
+- ✅ **A linguagem EMERGE mesmo quando ver custa andar** (H8): a comunicação sobe do
+      acaso (17%) a **~75%**, comparável ao baseline SEM corpo (objetos mostrados, ~58%
+      nesta semente) — a corporificação não impede a língua de emergir.
+- ✅ **Gated pela atenção conjunta** (o sinal mais limpo, painel c): a comunicação
+      ACOMPANHA o número de ENCONTROS co-localizados. Só se nomeia o que os dois corpos
+      atenderam JUNTOS — a mesma verdade do M18/M19/M21 (só se fala do que ambos
+      percebem), agora imposta pelo CORPO: ver e alinhar custam ir até lá.
+
+**Honesto:** corpo e sem-corpo ficam COMPARÁVEIS — a diferença varia com a semente, então
+NÃO afirmamos que um vence o outro (só que a língua sobrevive à corporificação). Escala de
+brinquedo; "encontro" é co-localização simples (não percepção mútua rica); é o MECANISMO
+do organismo inteiro num laço, não um cérebro pronto.
+
+**Significado:** é a metade que faltava. Pela primeira vez um organismo do brAIn faz, no
+MESMO laço, tudo o que antes vivia em agentes separados: **perceber + mover + lembrar +
+ser curioso + falar**. O mais perto de um "organismo cerebral" inteiro que o projeto chegou.
+
 ### Próximos (horizonte distante)
-- M25: event-driven real + onde a CPU/Python para e o neuromórfico começa; mundo mais rico
-  sob os substratos esparso/spiking; unir esparso (M22) + spiking (M24) num só. Recursão /
+- M26: event-driven real + onde a CPU/Python para e o neuromórfico começa; corpo no
+  substrato esparso+spiking ao mesmo tempo; "encontro" com percepção mútua mais rica;
+  mundo 2D (GridWorld) com paredes e planejamento (M11) no organismo que fala. Recursão /
   mensagens de tamanho variável; semântica mais rica; e, para linguagem plena, provável
   híbrido. O "100%" segue sendo o norte.
 
