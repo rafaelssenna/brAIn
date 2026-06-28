@@ -23,6 +23,8 @@ M17: composicionalidade. M18: símbolos ancorados na percepção.
 M19: a língua nasce da vivência. M20: o organismo vivo (a costura da cognição).
 M21: palavras de português ancoradas na percepção.
 M22: substrato esparso e dirigido a eventos (método > força bruta).
+M23: o organismo vivo rodando no substrato esparso (mesma cognição, menos energia).
+M24: o organismo vivo percebendo com neurônios que disparam (a cognição sobrevive aos spikes).
 """
 
 from .neuron import LIFPopulation, fi_curve_theory
@@ -33,7 +35,7 @@ from .curiosity import IntrinsicMotivation, select_region
 from .agent import RingWorld, IntegratedAgent
 from .memory import ReplayBuffer
 from .hierarchy import HierarchicalPredictiveCoder
-from .spiking_predictive import SpikingPredictiveCoder
+from .spiking_predictive import SpikingPredictiveCoder, SpikingPerceptionCoder
 from .sparse_predictive import SparsePredictiveCoder, OpCounter, dense_learn_macs, spiking_learn_ops
 from .planning import (GridWorld, WorldModel, explore_and_learn, plan,
                        run_planner, run_reactive)
@@ -48,7 +50,7 @@ __all__ = [
     "LIFPopulation", "fi_curve_theory", "STDPConnection", "LightWorld", "Vehicle",
     "PredictiveCoder", "IntrinsicMotivation", "select_region",
     "RingWorld", "IntegratedAgent", "ReplayBuffer", "HierarchicalPredictiveCoder",
-    "SpikingPredictiveCoder",
+    "SpikingPredictiveCoder", "SpikingPerceptionCoder",
     "SparsePredictiveCoder", "OpCounter", "dense_learn_macs", "spiking_learn_ops",
     "GridWorld", "WorldModel", "explore_and_learn", "plan", "run_planner", "run_reactive",
     "IntegratedBrain", "LivingAgent",

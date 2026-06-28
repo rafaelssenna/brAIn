@@ -273,10 +273,49 @@ operação sináptica, não relógio; escala de brinquedo; princípio, não efic
 inteiro (perceber + lembrar + falar) roda no código esparso. Próximo: event-driven de
 verdade (M24) e a fronteira honesta do que a CPU faz vs o que pede hardware neuromórfico.
 
+### M24 — O organismo vivo PERCEBENDO com neurônios que disparam ✅ (concluído)
+**Objetivo:** fechar a maior lacuna honesta do projeto (marcada com ⚠️ no README e no
+M13): o organismo vivo (M20, dois agentes que percebem, lembram e falam) sempre percebeu
+com um substrato RATE-BASED (taxa contínua). Mas o cérebro não faz isso — neurônios
+DISPARAM (spikes). O M10 já tinha esse substrato spiking (neurônios LIF reais), mas vivia
+ISOLADO, fora do organismo. Aqui ele entra no laço da vida. **Pergunta científica:** a
+cognição (percepção + linguagem co-emergindo) sobrevive quando a percepção é feita por
+neurônios que de fato disparam?
+- [x] `src/brain/spiking_predictive.py`: `SpikingPerceptionCoder` — adaptador do M10 que é
+      DROP-IN no organismo (mesma API do M4/M22: `infer(x)->r`, `learn`, `prediction_error`,
+      `active_fraction`, contagem de SynOps via `OpCounter`). Não muda a matemática do
+      substrato spiking; só ajusta a assinatura, como o `SparsePredictiveCoder` (M22) fez.
+- [x] `src/brain/living.py`: `LivingAgent` ganha o flag `spiking=True` (injeta o coder
+      spiking; com `spiking=False` é idêntico ao M20/M21/M23 — sem regressão).
+- [x] 5 testes — `tests/test_spiking_organism.py` (total: **91 verdes**).
+
+**Resultados (`experiments/m24_spiking_organism.py`) — rate-based vs spiking, mesma vida/semente:**
+- ✅ **A cognição SOBREVIVE aos spikes**: percebendo com neurônios LIF que disparam, a
+      surpresa cai **0.93 → 0.068** (vs **0.006** rate-based) e a comunicação co-emerge
+      (**75%** spiking vs **67%** rate), com **100%** dos conceitos distinguidos nos dois.
+- ✅ **Esparsidade EMERGENTE (de graça)**: o organismo rate-based fica **89.6% ativo**; o
+      spiking, **39.6%** — e ninguém impôs k-WTA. A esparsidade nasce do LIMIAR do spike
+      (corrente sublimiar => o neurônio não dispara => ρ=0). É a retificação biológica
+      surgindo sozinha, não programada.
+- ✅ **O substrato é spiking de verdade**: o raster (painel c) mostra os neurônios LIF
+      disparando ao perceber — eventos discretos no tempo, não números contínuos.
+
+**Honesto:** escala de brinquedo (6 objetos, D=64); o laço spiking é LENTO em Python
+(~80ms/passo) — a moeda continua sendo OPERAÇÃO SINÁPTICA, não o relógio (M6/M22). O
+spiking é *rate-coded* (a TAXA de disparo carrega o valor), não código temporal puro — o
+spiking predictive coding com timing fino segue como trabalho futuro. A surpresa do spiking
+assenta um pouco acima do rate-based (substrato mais cru). Isto prova que a cognição roda
+sobre spikes reais EM MINIATURA; não prova escala nem eficiência biológica.
+
+**Significado:** é o passo mais "cérebro de verdade" do organismo até aqui — a percepção
+que sustenta a linguagem deixou de ser uma taxa abstrata e passou a EMERGIR de neurônios
+que disparam. A fratura spiking↔cognição (aberta desde o M10/M13) fechou em miniatura.
+
 ### Próximos (horizonte distante)
-- M24: event-driven real + onde a CPU/Python para e o neuromórfico começa. M25: mundo
-  mais rico sob o substrato esparso. Recursão / mensagens de tamanho variável; semântica
-  mais rica; e, para linguagem plena, provável híbrido. O "100%" segue sendo o norte.
+- M25: event-driven real + onde a CPU/Python para e o neuromórfico começa; mundo mais rico
+  sob os substratos esparso/spiking; unir esparso (M22) + spiking (M24) num só. Recursão /
+  mensagens de tamanho variável; semântica mais rica; e, para linguagem plena, provável
+  híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

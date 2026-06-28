@@ -16,24 +16,37 @@ from __future__ import annotations
 import numpy as np
 
 from .sparse_predictive import SparsePredictiveCoder
+from .spiking_predictive import SpikingPerceptionCoder
 from .memory import ReplayBuffer
 
 
 class LivingAgent:
     """Um organismo que percebe, lembra e fala — tudo aprendido online.
 
-    O substrato de percepção pode ser DENSO (padrão, idêntico ao M4) ou ESPARSO
-    (M22): passe `sparse_k` (k-winners-take-all) e/ou `l1` para rodar o organismo
-    com código cortical e menos operações sinápticas. Com `sparse_k=None, l1=0` o
-    comportamento é exatamente o do M20/M21 (sem regressão).
+    O substrato de percepção pode ser:
+      • DENSO (padrão, idêntico ao M4) — `sparse_k=None, l1=0, spiking=False`;
+      • ESPARSO (M22) — passe `sparse_k` (k-WTA) e/ou `l1` para código cortical;
+      • SPIKING (M24) — passe `spiking=True` para PERCEBER com neurônios LIF reais
+        que disparam (substrato do M10 dentro do organismo). É o passo mais "cérebro
+        de verdade": a percepção deixa de ser uma taxa contínua e passa a emergir de
+        spikes. A esparsidade aí é EMERGENTE (corrente sublimiar => não dispara).
+
+    Com `sparse_k=None, l1=0, spiking=False` o comportamento é exatamente o do
+    M20/M21 (sem regressão). `spiking=True` ignora `sparse_k`/`l1` (substrato distinto).
     """
 
     def __init__(self, n_obs: int, n_latent: int, n_symbols: int,
                  lr_lang: float = 0.15, temp: float = 0.4,
                  replay_every: int = 10, replay_batch: int = 8, seed: int = 0,
-                 sparse_k: int | None = None, l1: float = 0.0):
-        self.pc = SparsePredictiveCoder(n_obs=n_obs, n_latent=n_latent, eta_w=0.05,
-                                        seed=seed, k_active=sparse_k, l1=l1)
+                 sparse_k: int | None = None, l1: float = 0.0,
+                 spiking: bool = False):
+        if spiking:
+            self.pc = SpikingPerceptionCoder(n_obs=n_obs, n_latent=n_latent,
+                                             eta_w=0.05, seed=seed)
+        else:
+            self.pc = SparsePredictiveCoder(n_obs=n_obs, n_latent=n_latent, eta_w=0.05,
+                                            seed=seed, k_active=sparse_k, l1=l1)
+        self.spiking = spiking
         self.buffer = ReplayBuffer(300, n_obs, seed=seed)
         self.nL = n_latent
         self.M = n_symbols

@@ -71,12 +71,17 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   cortical (12.5% ativo) faz o mesmo com **~7.5× menos operações sinápticas**, mantendo
   a qualidade · **M23** o **organismo vivo** (M20) roda nesse substrato esparso: percepção
   e linguagem co-emergem **gastando ~5.7× menos energia** (a fratura substrato↔cognição
-  fechou). **86 testes verdes.** O "100%"
-  (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
+  fechou) · **M24** o **organismo vivo percebe com neurônios que DISPARAM** — o substrato
+  spiking (M10) entra dentro do organismo: percebendo por spikes reais, a surpresa cai
+  0.93→0.068 e a comunicação co-emerge (75%), com a esparsidade (40% ativo) **emergindo
+  sozinha** do limiar do disparo. A cognição **sobrevive aos spikes**. **91 testes verdes.**
+  O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
-> ⚠️ **Honestidade:** o M13 costura corpo+previsão+curiosidade+memória+
-> planejamento+hierarquia num agente só (rate-based). Mas o substrato **spiking**
-> (M10) ainda **não** roda dentro desse agente integrado ao mesmo tempo — uni-los é
-> trabalho futuro. E raciocínio/linguagem são a *estrela-guia emergente*
+> ⚠️ **Honestidade:** o **M24** fez o substrato **spiking** (M10) rodar dentro do
+> *organismo vivo* (a linha M20: perceber+lembrar+falar) — a cognição sobrevive aos
+> spikes. Mas o **agente integrado M13** (corpo+planejamento+navegação+hierarquia,
+> rate-based) é um caminho de código distinto e **ainda não** percebe por spikes;
+> unir tudo (corpo+spiking+esparso+linguagem) num só agente segue trabalho futuro.
+> E raciocínio/linguagem são a *estrela-guia emergente*
 > ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido,
 > verificado, e recuado onde os dados não sustentaram.

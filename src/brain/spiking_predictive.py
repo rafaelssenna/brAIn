@@ -23,6 +23,7 @@ from __future__ import annotations
 import numpy as np
 
 from .neuron import LIFPopulation
+from .sparse_predictive import OpCounter
 
 
 class SpikingPredictiveCoder:
@@ -87,6 +88,78 @@ class SpikingPredictiveCoder:
         """Para visualização: tempos de disparo dos neurônios r sob a entrada x
         (na corrente já assentada). Retorna lista de arrays de tempos (ms)."""
         rho, _ = self.infer(x)
+        err = x - self.W @ rho
+        current = self.in_gain * (self.W.T @ err) - self.l2_prior * rho
+        self.lif.reset_state()
+        times = [[] for _ in range(self.n_latent)]
+        for k in range(self.window):
+            sp = self.lif.step(current)
+            for i in np.flatnonzero(sp):
+                times[i].append(k * self.lif.dt)
+        return [np.array(t) for t in times]
+
+
+class SpikingPerceptionCoder(SpikingPredictiveCoder):
+    """Adaptador do M10 para ser DROP-IN no organismo vivo (M20) — M24.
+
+    O `LivingAgent` (M20/M21) e o experimento esperam um preditor com a mesma API
+    do M4/M22: `infer(x) -> r` (só o vetor latente), `learn(x) -> (r, sse)`,
+    `prediction_error(x)`, `active_fraction(x)` e contagem de SynOps via `OpCounter`.
+    O `SpikingPredictiveCoder` original tem um `infer` que devolve `(rho, err)` — esta
+    subclasse só ajusta a ASSINATURA (sem mudar a matemática do substrato spiking) para
+    encaixar no organismo, do mesmo jeito que o `SparsePredictiveCoder` (M22) encaixou.
+
+    A esparsidade aqui não é imposta (k-WTA): EMERGE do limiar do spike — corrente
+    sublimiar => ρ=0 (o neurônio não dispara). É a retificação biológica de graça.
+    """
+
+    def infer(self, x: np.ndarray, counter: OpCounter | None = None) -> np.ndarray:
+        """Inferência spiking, mas retornando só ρ (a taxa de disparo latente).
+
+        Mantém o laço do M10 (ciclos de atividade LIF) e, se `counter` for dado,
+        contabiliza as operações sinápticas (previsão W·ρ e bottom-up Wᵀε por ciclo)
+        e os passos de integração de membrana dos neurônios LIF — a 'energia' do
+        substrato spiking, na mesma moeda (SynOps) do M22.
+        """
+        D, N = self.n_obs, self.n_latent
+        rho = np.zeros(N)
+        for _ in range(self.n_cycles):
+            err = x - self.W @ rho
+            current = self.in_gain * (self.W.T @ err) - self.l2_prior * rho
+            target = self._spike_rates(current)
+            rho = (1.0 - self.infer_lr) * rho + self.infer_lr * target
+            if counter is not None:
+                nnz = int(np.count_nonzero(rho))
+                counter.macs_predict += D * max(nnz, 1)     # W·ρ (só ativos propagam)
+                counter.macs_bottomup_full += D * N         # Wᵀε denso (ε é denso)
+                counter.macs_bottomup_warm += D * N         # spiking recomputa todos
+                counter.macs_update += N * self.window      # passos de membrana LIF
+        self._last_err = x - self.W @ rho
+        return rho
+
+    def learn(self, x: np.ndarray, counter: OpCounter | None = None):
+        """Infere ρ (spiking) e aplica a regra LOCAL ΔW ∝ ε ρᵀ (Hebbiano sobre o erro)."""
+        rho = self.infer(x, counter=counter)
+        err = x - self.W @ rho
+        self.W += self.eta_w * np.outer(err, rho)
+        self._normalize()
+        if counter is not None:
+            counter.macs_update += self.n_obs * int(np.count_nonzero(rho))
+        return rho, float(np.sum(err ** 2))
+
+    def prediction_error(self, x: np.ndarray) -> float:
+        rho = self.infer(x)
+        return float(np.sum((x - self.W @ rho) ** 2))
+
+    def active_fraction(self, x: np.ndarray) -> float:
+        """Fração de neurônios que disparam (ρ>0) ao perceber x — a esparsidade emergente."""
+        rho = self.infer(x)
+        return float(np.count_nonzero(rho)) / self.n_latent
+
+    def spike_raster(self, x: np.ndarray):
+        """Raster (tempos de disparo por neurônio) ao perceber x. Reusa a lógica do M10,
+        mas com o `infer` desta subclasse (que devolve só ρ) — para a figura do M24."""
+        rho = self.infer(x)
         err = x - self.W @ rho
         current = self.in_gain * (self.W.T @ err) - self.l2_prior * rho
         self.lif.reset_state()
