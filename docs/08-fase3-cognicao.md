@@ -344,12 +344,47 @@ do organismo inteiro num laço, não um cérebro pronto.
 MESMO laço, tudo o que antes vivia em agentes separados: **perceber + mover + lembrar +
 ser curioso + falar**. O mais perto de um "organismo cerebral" inteiro que o projeto chegou.
 
+### M26 — O organismo que PLANEJA rotas num mundo 2D e fala ✅ (concluído)
+**Objetivo:** o M25 deu corpo ao organismo que fala, mas num anel trivial (sem obstáculos).
+Um cérebro de verdade PLANEJA: imagina o caminho, contorna paredes, alcança o que quer.
+Esse maquinário já existia (M11/M13: `GridWorld` com paredes + `WorldModel` aprendido +
+`plan()` por busca na imaginação), mas vivia no agente MUDO. Aqui ele se junta à linguagem.
+**Pergunta científica (H9):** o planejamento permite ao organismo PERCEBER e NOMEAR o que
+está atrás da parede — algo que o reativo (sem imaginar o desvio) nunca alcança?
+- [x] `src/brain/planning_language.py`: `PlanningLanguageAgent` — `LivingAgent`
+      (percepção/memória/linguagem, M24/M25) montado num corpo 2D (`GridWorld`) + `WorldModel`/
+      `plan` (M11) + curiosidade (M5). A língua é aprendida por ATENÇÃO CONJUNTA (M21): ao
+      chegar numa célula de objeto, um "professor" diz a palavra e o agente aprende a nomear/
+      apontar. Aceita `spiking`/`sparse_k`. `use_planning=False` cai no reativo (trava na parede).
+- [x] 5 testes — `tests/test_planning_language.py` (total: **101 verdes**).
+
+**Resultados (`experiments/m26_planning_language.py`) — média de 3 sementes, planejador vs reativo:**
+- ✅ **Só quem planeja ALCANÇA o objeto atrás da parede**: visitas a C **302× vs 0×**.
+      O reativo anda reto e trava na parede; nunca chega a C.
+- ✅ **Só quem planeja APRENDE A VÊ-LO**: surpresa em C **0.003 (planejador) vs 0.494
+      (reativo)** — o reativo nunca vê C de perto, então nunca aprende a percebê-lo.
+- ✅ **Só quem planeja APRENDE A NOMEÁ-LO**: nomeia C **100% vs 0%**; nomeia o conjunto
+      todo **100% (planejador) vs 67% (reativo)**. O reativo nomeia os 2 objetos acessíveis,
+      mas nunca o terceiro (atrás da parede), porque nunca chegou lá.
+- ✅ **Aprende o modelo de transição vivendo**: nasce sem saber o que suas ações fazem e
+      preenche (s,a)→s' ao agir, base para imaginar a rota.
+
+**Significado:** é o efeito de INTEGRAÇÃO em estado puro — **pensar a rota é o que permite
+perceber E nomear o que está escondido**. Perceber + planejar + mover + lembrar + curiosidade
++ nomear, tudo num laço 2D só; nenhuma peça sozinha faz isso. O organismo cerebral mais
+completo do projeto até aqui.
+
+**Honesto:** escala de brinquedo (grid 5×5, 3 objetos); a língua é aprendida por PROFESSOR
+(atenção conjunta do ambiente, mecanismo do M21), NÃO negociada entre dois agentes (isso foi
+o M25) — dois corpos curiosos raramente se encontram na mesma célula num grid com parede,
+então o professor é o caminho honesto para isolar o efeito do planejamento sobre a língua. É
+o MECANISMO do organismo, não um cérebro pronto.
+
 ### Próximos (horizonte distante)
-- M26: event-driven real + onde a CPU/Python para e o neuromórfico começa; corpo no
-  substrato esparso+spiking ao mesmo tempo; "encontro" com percepção mútua mais rica;
-  mundo 2D (GridWorld) com paredes e planejamento (M11) no organismo que fala. Recursão /
-  mensagens de tamanho variável; semântica mais rica; e, para linguagem plena, provável
-  híbrido. O "100%" segue sendo o norte.
+- M27: unir TUDO num agente só — corpo 2D + planejamento + **dois agentes negociando a
+  língua** (M25) + substrato spiking+esparso (M24/M22) ao mesmo tempo; event-driven real e
+  a fronteira CPU↔neuromórfico; mundo mais rico. Recursão / mensagens de tamanho variável;
+  semântica mais rica; e, para linguagem plena, provável híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

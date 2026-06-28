@@ -79,14 +79,20 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   dois organismos com **corpo** navegam um mundo por curiosidade, percebem, lembram e
   **falam**, alinhando a língua só quando se **encontram** (atenção conjunta corporificada).
   A linguagem emerge mesmo quando ver custa andar (acaso 17% → ~75%), **gated pelos
-  encontros**: perceber+mover+lembrar+ser curioso+falar, num laço só. **96 testes verdes.**
+  encontros**: perceber+mover+lembrar+ser curioso+falar, num laço só · **M26** o
+  **organismo PLANEJA rotas num mundo 2D e fala** — corpo num grid com **parede**, aprende
+  o modelo de transição vivendo, a curiosidade escolhe a meta, o **planejamento** traça a
+  rota (contornando a parede), percebe, lembra e **nomeia** (atenção conjunta). Efeito de
+  integração puro: **só quem planeja a rota alcança, percebe E nomeia o objeto atrás da
+  parede** (nomeia C 100% vs 0% reativo; vê C com surpresa 0.003 vs 0.49). **101 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
-> ⚠️ **Honestidade:** o **M24** fez o substrato **spiking** (M10) rodar dentro do
-> *organismo vivo*, e o **M25** deu **corpo** a ele (perceber+mover+lembrar+curiosidade+
-> falar num laço). Mas a unificação PLENA — corpo + spiking + esparso + **planejamento**
-> (o `GridWorld` com paredes do M11/M13) + linguagem, tudo num só agente — ainda não
-> existe: o M25 usa o anel (`RingWorld`) e o "encontro" é co-localização simples, não
-> percepção mútua rica. Unir tudo segue trabalho futuro. E raciocínio/linguagem são a
-> *estrela-guia emergente* ([docs/01](docs/01-visao-e-hipotese.md)), não entregas
-> próximas. Tudo medido, verificado, e recuado onde os dados não sustentaram.
+> ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o
+> **M25** deu **corpo** a ele (dois agentes negociando a língua por encontro), e o **M26**
+> deu **planejamento num mundo 2D** com paredes (perceber+planejar+mover+lembrar+curiosidade+
+> nomear). Mas cada marco isola UMA dimensão: o M26 usa **professor** para a língua (não dois
+> agentes), e ainda **não** existe um único agente com corpo 2D + planejamento + dois agentes
+> negociando + substrato spiking/esparso, tudo junto — unir tudo é o M27 (futuro). E
+> raciocínio/linguagem plenos são a *estrela-guia emergente*
+> ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido, verificado,
+> e recuado onde os dados não sustentaram.

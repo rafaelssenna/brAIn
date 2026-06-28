@@ -26,6 +26,7 @@ M22: substrato esparso e dirigido a eventos (método > força bruta).
 M23: o organismo vivo rodando no substrato esparso (mesma cognição, menos energia).
 M24: o organismo vivo percebendo com neurônios que disparam (a cognição sobrevive aos spikes).
 M25: o organismo corporificado que fala (corpo + percepção + curiosidade + memória + linguagem num laço).
+M26: o organismo que planeja rotas num mundo 2D e fala (planejar + contornar paredes + nomear o que alcança).
 """
 
 from .neuron import LIFPopulation, fi_curve_theory
@@ -45,6 +46,7 @@ from .temporal import TemporalPredictiveCoder
 from .communication import SignalingGame, CompositionalGame, GroundedLanguageGame, LivedLanguageGame
 from .living import LivingAgent
 from .embodied_language import EmbodiedLanguageAgent, communication_accuracy
+from .planning_language import PlanningLanguageAgent
 
 __all__ = [
     "TemporalPredictiveCoder", "SignalingGame", "CompositionalGame", "GroundedLanguageGame",
@@ -57,4 +59,5 @@ __all__ = [
     "GridWorld", "WorldModel", "explore_and_learn", "plan", "run_planner", "run_reactive",
     "IntegratedBrain", "LivingAgent",
     "EmbodiedLanguageAgent", "communication_accuracy",
+    "PlanningLanguageAgent",
 ]
