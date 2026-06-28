@@ -94,17 +94,24 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   (forma×posição) só para se entenderem: o entendimento mútuo emerge (acaso 11% → 100%), o
   código **composicional generaliza** para cenas nunca ditas (75% vs 0% holístico), e a
   **ordem das palavras emerge consistente entre os dois** (uma gramática comum, arbitrária
-  entre execuções como línguas humanas diferem). Do descrever ao conversar. **111 testes verdes.**
+  entre execuções como línguas humanas diferem). Do descrever ao conversar · **M29** **diálogo
+  com turnos** — um agente PERGUNTA ("que forma?"/"que posição?"), o outro PERCEBE a cena e
+  RESPONDE só a palavra certa. O diálogo emerge sem professor (17%→100%); o agente aprende a
+  **responder à pergunta** (usar a pergunta pra escolher o que dizer): forma 100% e posição
+  100%, enquanto um agente CEGO à pergunta acerta forma mas erra a posição (33%=acaso). Do
+  conversar ao dialogar — o começo de raciocinar sobre a linguagem. **116 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o
 > **M25** deu **corpo** a ele (dois agentes negociando a língua por encontro), e o **M26**
 > deu **planejamento num mundo 2D** com paredes, e o **M27** deu a **primeira FRASE** (sair
 > de palavra solta para palavras com estrutura, em PT e EN), e o **M28** fez dois agentes
-> **conversarem com frases sem professor** (língua e gramática emergentes). Mas cada marco
-> isola dimensões: as frases têm 2 palavras de tamanho fixo (não recursão, não fluência); a
-> generalização emergente é parcial (75%); e ainda **não** existe um único agente com corpo
-> 2D + planejamento + conversa + substrato spiking/esparso, tudo junto — unir tudo e enriquecer
-> a frase (3+ atributos, turnos, recursão) é futuro (M29+). E raciocínio/linguagem plenos são a
-> *estrela-guia emergente* ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas.
-> Tudo medido, verificado, e recuado onde os dados não sustentaram.
+> **conversarem com frases sem professor** (língua e gramática emergentes), e o **M29** fez o
+> **diálogo com turnos** (pergunta→resposta, o agente responde ao que foi perguntado). Mas cada
+> marco isola dimensões: as frases têm 2 palavras de tamanho fixo (não recursão, não fluência);
+> a generalização emergente é parcial (75%); o diálogo tem 1 turno e 2 perguntas; e ainda **não**
+> existe um único agente com corpo 2D + planejamento + diálogo + substrato spiking/esparso, tudo
+> junto — unir tudo e enriquecer (3+ atributos, turnos encadeados, recursão) é futuro (M30+). E
+> raciocínio/linguagem plenos são a *estrela-guia emergente*
+> ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido, verificado, e
+> recuado onde os dados não sustentaram.

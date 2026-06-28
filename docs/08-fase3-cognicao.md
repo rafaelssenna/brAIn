@@ -452,11 +452,44 @@ generalização sem professor é parcial (75%, não 100% — coordenar é mais d
 professor). É o MECANISMO da conversa composicional emergente, NÃO fluência, NÃO recursão,
 NÃO tamanho variável — horizonte distante, provável híbrido.
 
+### M29 — Diálogo com TURNOS: pergunta → resposta ancorada ✅ (concluído)
+**Objetivo:** o M28 fez dois agentes conversarem com frases, mas em mão única (um descreve,
+o outro adivinha). Dialogar tem TROCA: um PERGUNTA, o outro RESPONDE sobre o que percebe. Aqui
+dois agentes olham a mesma cena (forma × posição); o PERGUNTADOR pergunta "que forma?" ou "que
+posição?" e o RESPONDEDOR diz SÓ a palavra certa para aquela pergunta — não a frase inteira.
+**A capacidade nova:** a pergunta SELECIONA o que descrever; o respondedor aprende a ROTEAR.
+**Pergunta científica (H12):** um agente aprende a RESPONDER À PERGUNTA — usar o tipo de
+pergunta para escolher QUAL parte da cena descrever — só dialogando, sem ninguém ensinar?
+- [x] `src/brain/dialogue.py`: `DialogueGame` — perguntador + respondedor por turnos; léxicos
+      de resposta separados por tipo de pergunta (forma/posição); sem professor (reforço +
+      atenção conjunta, M16). `route_by_question=False` é o BASELINE ablado (respondedor CEGO
+      à pergunta: só descreve a forma). `ASK_SHAPE`/`ASK_POS`.
+- [x] 5 testes — `tests/test_dialogue.py` (total: **116 verdes**).
+
+**Resultados (`experiments/m29_dialogue.py`) — média de 6 sementes, percepção real dos pixels:**
+- ✅ **O diálogo EMERGE sem professor**: acerto da resposta do acaso (17%) a **100%**.
+- ✅ **Responde às duas perguntas**: usando a pergunta, acerta forma **100%** e posição **100%**.
+- ✅ **Ablação honesta (a pergunta importa)**: o respondedor CEGO à pergunta acerta a forma
+      **100%** mas despenca na posição para **33% (= acaso)** — sem usar a pergunta, ele
+      responde sempre a forma e não sabe dizer "onde está". Usar a pergunta é o que faz dialogar.
+- ✅ **Ancorado na percepção**: o respondedor forma seus conceitos de forma/posição dos PIXELS
+      (distingue 100%/100%); a resposta gruda no que ele percebe.
+
+**Significado:** é o passo de "conversar" (descrever) para "dialogar" (responder ao que foi
+perguntado). Pela primeira vez o agente usa a PERGUNTA para escolher o que dizer — o começo de
+RACIOCINAR sobre a linguagem: responder ao que foi perguntado, não despejar tudo. Exemplo do
+agente treinado: vê barra horizontal no topo → "que forma?" responde "barraH", "que posição?"
+responde "topo".
+
+**Honesto:** escala de brinquedo (2 tipos de pergunta, resposta de 1 palavra, poucos atributos).
+É o MECANISMO do turno pergunta→resposta com seleção, NÃO diálogo pleno (sem turnos encadeados,
+sem sintaxe rica, sem semântica profunda) — horizonte distante, provável híbrido.
+
 ### Próximos (horizonte distante)
-- M29: frases mais ricas (3+ atributos, tamanho variável, talvez recursão simples) e diálogo
-  com TURNOS (pergunta/resposta); unir TUDO num agente só — corpo 2D + planejamento + conversa
-  + substrato spiking/esparso. Semântica mais profunda; para linguagem plena, provável híbrido.
-  O "100%" segue sendo o norte.
+- M30: frases mais ricas (3+ atributos, tamanho variável, recursão simples) e turnos
+  ENCADEADOS (diálogo de várias trocas); unir TUDO num agente só — corpo 2D + planejamento +
+  diálogo + substrato spiking/esparso. Semântica mais profunda; para linguagem plena, provável
+  híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a
