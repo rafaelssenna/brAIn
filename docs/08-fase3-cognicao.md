@@ -600,10 +600,36 @@ distingue a linguagem humana de um repertório finito de sinais.
 **Honesto:** recursão de UM nível (objeto dentro de relação), escala de brinquedo. É o MECANISMO
 da composição recursiva, NÃO recursão arbitrariamente profunda nem sintaxe plena.
 
+### M34 — Negação e contraste ✅ (concluído)
+**Objetivo:** até aqui o agente descrevia o que VÊ. A linguagem também NEGA: "NÃO o vermelho",
+"o OUTRO". Negar é um OPERADOR LÓGICO — "não X" seleciona o complemento de X. Entender isso é
+raciocinar sobre a linguagem, não só nomear. Cena com 2 objetos de cores distintas; o falante
+aponta um por negação do outro.
+**Pergunta científica (H17):** o agente entende a NEGAÇÃO — identificar um objeto pelo que ele
+NÃO é (o complemento)?
+- [x] `src/brain/negation.py`: `NegationGame` — reusa o grounding de cor (palavra↔cor) de um
+      `DialogueGame`; ao ouvir "não <palavra>", decodifica a cor negada e escolhe o objeto que
+      NÃO a tem. `understand_negation=False` = baseline (ignora o "não").
+- [x] 5 testes — `tests/test_negation.py` (total: **141 verdes**).
+
+**Resultados (`experiments/m34_negation.py`) — média de 6 sementes:**
+- ✅ **Entende a negação**: "não o vermelho" → aponta o complemento (o azul) — **100%**.
+- ✅ **Ablação total**: o agente que IGNORA o "não" aponta o objeto NEGADO (o errado) — **0%**.
+      O contraste 100% vs 0% mostra que a negação INVERTE a referência, e o agente capta isso.
+- ✅ Exemplos: "não o verde" → vermelho; "não o azul" → verde.
+
+**Significado:** é o primeiro OPERADOR LÓGICO sobre a linguagem — apontar pelo que algo NÃO é.
+Não é mais descrever o visível: é transformar o conjunto de referentes (complemento). Um passo
+do "nomear" para o "raciocinar com" a linguagem.
+
+**Honesto:** negação simples sobre 2 objetos e 1 atributo de contraste, escala de brinquedo. É
+o MECANISMO do operador de negação, NÃO lógica plena (sem quantificadores, sem escopo aninhado,
+sem negação de relações) — horizonte distante.
+
 ### Próximos (horizonte distante)
-- M34: operadores (negação, contraste: "a outra", "não a vermelha"); tamanho de frase mais
-  variável e recursão mais profunda; descobrir a gramática por estatística pura; unir TUDO num
-  agente só. Semântica mais profunda; para linguagem plena, provável híbrido. O "100%" é o norte.
+- M35: descobrir a gramática por ESTATÍSTICA pura (sem rótulos de atributo); quantificadores
+  ("todos", "algum"); recursão mais profunda; unir TUDO num agente só. Semântica mais profunda;
+  para linguagem plena, provável híbrido. O "100%" é o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

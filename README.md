@@ -114,7 +114,10 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   relacionais "estruturas dentro de estruturas": "barra vermelho **acima** ponto azul" (objeto-
   relação-objeto, 162 cenas). O agente compõe/entende 100% e **generaliza** para as relacionais
   nunca vistas (100%), reusando a sub-frase de objeto nas duas posições. O poder infinito da
-  linguagem: poucas peças, infinitas frases. **136 testes verdes.**
+  linguagem: poucas peças, infinitas frases · **M34** **negação** — "não o vermelho" é um
+  operador lógico (= o complemento): o agente aponta o objeto pelo que ele **NÃO é** (100%),
+  enquanto ignorar o "não" pega exatamente o errado (0%). Do nomear ao raciocinar com a
+  linguagem. **141 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o
