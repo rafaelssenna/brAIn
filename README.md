@@ -110,7 +110,11 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   (forma+cor+posição, 27 cenas): "barra vermelho topo". O agente monta/entende 100% e
   **generaliza** para as cenas nunca vistas (100%), com o mesmo mecanismo aprendendo ordens de
   idiomas diferentes ("topo barra vermelho"); ordem aleatória não aprende (23%). A produtividade
-  da linguagem — infinitos significados de poucas palavras. **131 testes verdes.**
+  da linguagem — infinitos significados de poucas palavras · **M33** **recursão** — frases
+  relacionais "estruturas dentro de estruturas": "barra vermelho **acima** ponto azul" (objeto-
+  relação-objeto, 162 cenas). O agente compõe/entende 100% e **generaliza** para as relacionais
+  nunca vistas (100%), reusando a sub-frase de objeto nas duas posições. O poder infinito da
+  linguagem: poucas peças, infinitas frases. **136 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o

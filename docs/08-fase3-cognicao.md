@@ -574,11 +574,36 @@ mostra composicionalidade real, na linha do "falar de verdade".
 da descrição composicional rica, NÃO fluência, NÃO recursão, NÃO tamanho variável — horizonte
 distante, provável híbrido.
 
+### M33 — Frases relacionais e RECURSÃO ✅ (concluído)
+**Objetivo:** a linguagem é RECURSIVA — uma frase contém frases. "A barra vermelha ACIMA do
+ponto azul" descreve DOIS objetos e uma RELAÇÃO; cada objeto é uma sub-descrição. Este marco
+dá o passo: cena com 2 objetos (forma × cor) + relação (acima/abaixo); frase = sub(obj1) +
+relação + sub(obj2). 162 cenas relacionais possíveis.
+**Pergunta científica (H16):** o agente compõe/entende frases RECURSIVAS e generaliza para
+cenas relacionais nunca vistas?
+- [x] `src/brain/relational_sentence.py`: `RelationalSentenceLearner` — REUSA um
+      `RichSentenceLearner` (M32) para a sub-frase de objeto (a parte recursiva: o mesmo
+      aprendiz aplicado às duas posições) + léxico de relação. `make_relational_language`.
+- [x] 5 testes — `tests/test_relational_sentence.py` (total: **136 verdes**).
+
+**Resultados (`experiments/m33_relational_sentence.py`) — média de 6 sementes:**
+- ✅ **Compõe/entende frases recursivas**: treino **100%**.
+- ✅ **GENERALIZA**: treina em 70%, compõe frases certas para as 30% **nunca vistas** — **100%**.
+      A curva mostra generalização plena já com pouca exposição (poucas peças, infinitas frases).
+- ✅ **A sub-frase de objeto é reusada**: o mesmo objeto é descrito igual na 1ª ou na 2ª posição
+      (a recursão de verdade). Ex.: "barra vermelho acima ponto azul".
+
+**Significado:** é o poder infinito da linguagem em miniatura — estruturas dentro de estruturas,
+compostas de partes reusáveis, generalizando para o que nunca se ouviu. A recursão é o que
+distingue a linguagem humana de um repertório finito de sinais.
+
+**Honesto:** recursão de UM nível (objeto dentro de relação), escala de brinquedo. É o MECANISMO
+da composição recursiva, NÃO recursão arbitrariamente profunda nem sintaxe plena.
+
 ### Próximos (horizonte distante)
-- M33: tamanho de frase VARIÁVEL e recursão simples (frases dentro de frases); unir TUDO num
-  agente só — corpo 2D + planejamento + diálogo contextual/correferência + frases ricas +
-  substrato spiking/esparso. Semântica mais profunda; para linguagem plena, provável híbrido.
-  O "100%" segue sendo o norte.
+- M34: operadores (negação, contraste: "a outra", "não a vermelha"); tamanho de frase mais
+  variável e recursão mais profunda; descobrir a gramática por estatística pura; unir TUDO num
+  agente só. Semântica mais profunda; para linguagem plena, provável híbrido. O "100%" é o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

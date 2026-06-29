@@ -33,6 +33,7 @@ M29: diálogo com turnos — pergunta→resposta ancorada (a pergunta seleciona 
 M30: diálogo de vários turnos com contexto — lembra o objeto em foco e resolve referência ("dela").
 M31: correferência — resolve "dela" entre VÁRIOS objetos (pela recência ou por descrição).
 M32: frases mais ricas — descrição de 3 atributos (forma+cor+posição), generaliza para cenas nunca vistas.
+M33: frases relacionais e recursão — "a barra acima do ponto" (objeto-relação-objeto), generaliza.
 """
 
 from .neuron import LIFPopulation, fi_curve_theory
@@ -61,6 +62,7 @@ from .contextual_dialogue import (ContextualDialogue, ASK_SHAPE_NEW, ASK_POS_NEW
                                   ASK_POS_REF, ASK_SHAPE_REF)
 from .coreference import CoreferenceDialogue
 from .rich_sentence import RichSentenceLearner, make_rich_language
+from .relational_sentence import RelationalSentenceLearner, make_relational_language
 
 __all__ = [
     "TemporalPredictiveCoder", "SignalingGame", "CompositionalGame", "GroundedLanguageGame",
@@ -80,4 +82,5 @@ __all__ = [
     "ContextualDialogue", "ASK_SHAPE_NEW", "ASK_POS_NEW", "ASK_POS_REF", "ASK_SHAPE_REF",
     "CoreferenceDialogue",
     "RichSentenceLearner", "make_rich_language",
+    "RelationalSentenceLearner", "make_relational_language",
 ]
