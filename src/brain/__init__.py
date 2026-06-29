@@ -37,6 +37,7 @@ M33: frases relacionais e recursão — "a barra acima do ponto" (objeto-relaç�
 M34: negação e contraste — "não o vermelho" (operador lógico: escolhe o complemento).
 M35: descobrir a gramática por estatística pura — classes de palavras e ordem, sem rótulos.
 M36: quantificadores — "todos", "algum", "nenhum" (semântica de verdade sobre conjuntos).
+Infra: mundo rico (192 objetos, forma×cor×tamanho×posição) + RichBrain (módulos corticais) para treino pesado.
 """
 
 from .neuron import LIFPopulation, fi_curve_theory
@@ -69,6 +70,8 @@ from .relational_sentence import RelationalSentenceLearner, make_relational_lang
 from .negation import NegationGame
 from .grammar_discovery import GrammarDiscovery
 from .quantifiers import QuantifierGame, ALL, SOME, NONE, QUANT_NAMES
+from . import rich_world
+from .rich_world import RichBrain
 
 __all__ = [
     "TemporalPredictiveCoder", "SignalingGame", "CompositionalGame", "GroundedLanguageGame",
@@ -92,4 +95,5 @@ __all__ = [
     "NegationGame",
     "GrammarDiscovery",
     "QuantifierGame", "ALL", "SOME", "NONE", "QUANT_NAMES",
+    "rich_world", "RichBrain",
 ]

@@ -45,10 +45,14 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
 O brAIn **nasce sem saber nada** e aprende vivendo. Duas ferramentas para isso:
 
 ```bash
-python train.py            # treina o cérebro intensivamente (vive + consolida por replay/'sono')
-                           #   -> salva em brain.npz; o aprendizado ACUMULA entre execuções
+python train.py            # treino no mundo simples (6 palavras de posição) -> brain.npz
 python chat.py             # converse: ensine palavras, pergunte, e veja-o aprender ao vivo
                            #   -> carrega brain.npz e ACORDA esperto (não renasce bebê)
+
+python train_rich.py --steps 3000000   # treino PESADO no mundo rico (192 objetos:
+                           #   forma×cor×tamanho×posição, imagem colorida 16×16×3) -> brain_rich/
+                           #   módulos corticais (um por atributo); o mundo grande não satura,
+                           #   então treinar muito finalmente rende. Acumula entre execuções.
 ```
 
 No chat: `ensina <palavra>`, `ver <palavra>`, `pergunta <palavra>`, `treina tudo 40`, `status`,
