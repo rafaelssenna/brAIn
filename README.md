@@ -117,7 +117,11 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   linguagem: poucas peças, infinitas frases · **M34** **negação** — "não o vermelho" é um
   operador lógico (= o complemento): o agente aponta o objeto pelo que ele **NÃO é** (100%),
   enquanto ignorar o "não" pega exatamente o errado (0%). Do nomear ao raciocinar com a
-  linguagem. **141 testes verdes.**
+  linguagem · **M35** **descoberta não-supervisionada da gramática** — como um bebê ouvindo a
+  língua: recebendo SÓ frases (sem rótulos), o agente descobre as **classes de palavras**
+  (formas/cores/posições separam sozinhas, pureza 100%) e a **gramática** (ordem das classes) só
+  pela estatística das co-ocorrências (Saffran 1996), distinguindo frases corretas de
+  embaralhadas (100%/100%). De "alguém me ensina" para "eu descubro sozinho". **146 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o

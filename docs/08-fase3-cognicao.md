@@ -626,10 +626,36 @@ do "nomear" para o "raciocinar com" a linguagem.
 o MECANISMO do operador de negação, NÃO lógica plena (sem quantificadores, sem escopo aninhado,
 sem negação de relações) — horizonte distante.
 
+### M35 — Descobrir a gramática por ESTATÍSTICA pura ✅ (concluído)
+**Objetivo:** até aqui um "professor" dava atenção conjunta (o agente sabia o que cada palavra
+significava). Aqui é como um bebê ouvindo a língua ao redor: o agente recebe SÓ um corpus de
+frases (sequências de palavras), sem NENHUM rótulo, e descobre sozinho (1) as CLASSES de
+palavras e (2) a GRAMÁTICA — pela estatística das co-ocorrências (Saffran, Aslin & Newport 1996).
+**Pergunta científica (H18):** o agente descobre classes e gramática SÓ pela estatística, sem
+rótulos, e distingue frases gramaticais de embaralhadas?
+- [x] `src/brain/grammar_discovery.py`: `GrammarDiscovery` — conta bigramas, monta um vetor de
+      CONTEXTO por palavra (com quem co-ocorre antes/depois), agrupa por similaridade de
+      contexto (k-means cosseno) = CLASSES; a matriz de transição entre classes = GRAMÁTICA;
+      uma frase é gramatical se NENHUMA transição de classe é proibida (mínimo, não média).
+- [x] 5 testes — `tests/test_grammar_discovery.py` (total: **146 verdes**).
+
+**Resultados (`experiments/m35_grammar_discovery.py`) — média de 6 sementes:**
+- ✅ **Descobre as classes sem rótulos**: pureza **100%** — formas, cores e posições separam
+      sozinhas, só porque aparecem nos mesmos contextos.
+- ✅ **Descobre a gramática**: a matriz de transição entre classes recupera a ordem da língua.
+- ✅ **Distingue gramatical de embaralhado**: reconhece frases corretas **100%** e rejeita
+      embaralhadas **100%**.
+
+**Significado:** é a aquisição NÃO-SUPERVISIONADA de estrutura linguística — sem professor, sem
+rótulos, só ouvindo, como um bebê descobre as categorias e a ordem da sua língua pela estatística
+do que escuta. Fecha a ponte entre "alguém me ensina" e "eu descubro sozinho".
+
+**Honesto:** vocabulário pequeno, gramática regular (sem recursão), escala de brinquedo. É o
+MECANISMO da descoberta estatística de classes/gramática, NÃO indução de gramática plena.
+
 ### Próximos (horizonte distante)
-- M35: descobrir a gramática por ESTATÍSTICA pura (sem rótulos de atributo); quantificadores
-  ("todos", "algum"); recursão mais profunda; unir TUDO num agente só. Semântica mais profunda;
-  para linguagem plena, provável híbrido. O "100%" é o norte.
+- M36: quantificadores ("todos", "algum", "nenhum"); recursão mais profunda; unir TUDO num
+  agente só. Semântica mais profunda; para linguagem plena, provável híbrido. O "100%" é o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

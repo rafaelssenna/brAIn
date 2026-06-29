@@ -35,6 +35,7 @@ M31: correferência — resolve "dela" entre VÁRIOS objetos (pela recência ou 
 M32: frases mais ricas — descrição de 3 atributos (forma+cor+posição), generaliza para cenas nunca vistas.
 M33: frases relacionais e recursão — "a barra acima do ponto" (objeto-relação-objeto), generaliza.
 M34: negação e contraste — "não o vermelho" (operador lógico: escolhe o complemento).
+M35: descobrir a gramática por estatística pura — classes de palavras e ordem, sem rótulos.
 """
 
 from .neuron import LIFPopulation, fi_curve_theory
@@ -65,6 +66,7 @@ from .coreference import CoreferenceDialogue
 from .rich_sentence import RichSentenceLearner, make_rich_language
 from .relational_sentence import RelationalSentenceLearner, make_relational_language
 from .negation import NegationGame
+from .grammar_discovery import GrammarDiscovery
 
 __all__ = [
     "TemporalPredictiveCoder", "SignalingGame", "CompositionalGame", "GroundedLanguageGame",
@@ -86,4 +88,5 @@ __all__ = [
     "RichSentenceLearner", "make_rich_language",
     "RelationalSentenceLearner", "make_relational_language",
     "NegationGame",
+    "GrammarDiscovery",
 ]
