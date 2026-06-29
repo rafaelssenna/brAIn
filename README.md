@@ -40,6 +40,22 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
 | [08-fase3-cognicao.md](docs/08-fase3-cognicao.md) | **Fase 3 (M14→)**: cognição e linguagem emergentes — o "100%" distante (iniciada) |
 | [09-estudo-grounding.md](docs/09-estudo-grounding.md) | **Estudo: symbol grounding** (prep. do M18) — Harnad, language games de Steels, com fontes |
 
+## Interagir e treinar (não é chatbot — aprende vivendo)
+
+O brAIn **nasce sem saber nada** e aprende vivendo. Duas ferramentas para isso:
+
+```bash
+python train.py            # treina o cérebro intensivamente (vive + consolida por replay/'sono')
+                           #   -> salva em brain.npz; o aprendizado ACUMULA entre execuções
+python chat.py             # converse: ensine palavras, pergunte, e veja-o aprender ao vivo
+                           #   -> carrega brain.npz e ACORDA esperto (não renasce bebê)
+```
+
+No chat: `ensina <palavra>`, `ver <palavra>`, `pergunta <palavra>`, `treina tudo 40`, `status`,
+`salvar`, `esquecer`. A persistência (`save`/`load` do `LivingAgent`) é a **memória de longo
+prazo**; o replay no treino é a **consolidação** (o papel do sono). O `brain.npz` versionado já
+vem com um cérebro que nomeia 100% das 6 palavras de português ancoradas na percepção.
+
 ## Status
 
 **M0–M6 concluídos — roadmap completo** (30 testes verdes):

@@ -95,3 +95,30 @@ class LivingAgent:
     def discriminability(self, objects) -> float:
         cs = [self.concept(o) for o in objects]
         return len(set(cs)) / len(objects)
+
+    # --- memória de longo prazo: salvar/carregar o cérebro (consolidação) ---
+    def save(self, path: str) -> None:
+        """Grava o que o agente APRENDEU (pesos da percepção + matrizes de linguagem) num
+        arquivo .npz. É a memória de longo prazo: fecha e reabre, e ele lembra — não renasce
+        bebê. Salva também a config para reconstruir o agente igual."""
+        import numpy as _np
+        _np.savez(
+            path,
+            W=self.pc.W, S=self.S, R=self.R,
+            n_obs=self.pc.n_obs, n_latent=self.nL, n_symbols=self.M,
+            spiking=self.spiking, _t=self._t,
+        )
+
+    @classmethod
+    def load(cls, path: str):
+        """Recria um agente a partir de um cérebro salvo por `save`. Ele acorda com tudo o
+        que tinha aprendido."""
+        import numpy as _np
+        d = _np.load(path if path.endswith(".npz") else path + ".npz", allow_pickle=False)
+        agent = cls(int(d["n_obs"]), int(d["n_latent"]), int(d["n_symbols"]),
+                    spiking=bool(d["spiking"]))
+        agent.pc.W = d["W"]
+        agent.S = d["S"]
+        agent.R = d["R"]
+        agent._t = int(d["_t"])
+        return agent

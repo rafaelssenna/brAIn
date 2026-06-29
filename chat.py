@@ -16,8 +16,14 @@ Comandos (digite e tecle Enter):
   pergunta <palavra> ele OUVE a palavra e tenta APONTAR a posição certa
   status             mostra o quanto ele já aprendeu (nomear, distinguir)
   palavras           lista as palavras que ele conhece
+  salvar             guarda o cérebro (ele LEMBRA na próxima vez que abrir)
+  carregar           recarrega o cérebro salvo
+  esquecer           zera o cérebro (volta a nascer sem saber nada)
   ajuda              mostra estes comandos
   sair               encerra
+
+Dica: rode antes  python train.py  para treinar o cérebro intensivamente; o chat
+carrega esse cérebro e ele já acorda esperto.
 
 Uso:   python chat.py
 
@@ -74,11 +80,38 @@ def noisy(i, rng):
     return v / np.linalg.norm(v)
 
 
+BRAIN_FILE = os.path.join(os.path.dirname(__file__), "brain.npz")
+
+
 class Chat:
     def __init__(self, seed=1):
-        self.agent = LivingAgent(D, n_latent=12, n_symbols=K, seed=seed)
+        # se há um cérebro treinado salvo, ACORDA ESPERTO; senão, nasce do zero
+        if os.path.exists(BRAIN_FILE):
+            self.agent = LivingAgent.load(BRAIN_FILE)
+            self.taught = self.agent._t
+            self.loaded = True
+        else:
+            self.agent = LivingAgent(D, n_latent=12, n_symbols=K, seed=seed)
+            self.taught = 0
+            self.loaded = False
         self.rng = np.random.default_rng(seed)
+
+    def salvar(self):
+        self.agent.save(BRAIN_FILE)
+        print(f"  cérebro salvo ({self.taught} exemplos vividos). Da próxima vez ele lembra.")
+
+    def carregar(self):
+        if os.path.exists(BRAIN_FILE):
+            self.agent = LivingAgent.load(BRAIN_FILE)
+            self.taught = self.agent._t
+            print(f"  cérebro carregado ({self.taught} exemplos). "); self.status()
+        else:
+            print("  ainda não há cérebro salvo. Ensine e use 'salvar'.")
+
+    def esquecer(self):
+        self.agent = LivingAgent(D, n_latent=12, n_symbols=K, seed=int(self.rng.integers(1e6)))
         self.taught = 0
+        print("  cérebro zerado: ele voltou a nascer sem saber nada (do zero).")
 
     # --- ações ---
     def ver(self, word):
@@ -174,10 +207,17 @@ def main():
     print("=" * 64)
     print("  brAIn — chat: ensine a IA e veja ela aprender (não é chatbot)")
     print("=" * 64)
-    print("  Ele NASCE SEM SABER NADA. Ensine com 'ensina <palavra>' ou")
-    print("  'treina tudo 30', e veja-o aprender. Digite 'ajuda' para os comandos.")
-    print(HELP)
     chat = Chat()
+    if chat.loaded:
+        nomear = np.mean([chat.agent.speak(chat.agent.concept(P[i]), explore=False) == i
+                          for i in range(K)])
+        print(f"  Ele ACORDOU com um cérebro já treinado ({chat.taught} exemplos vividos,")
+        print(f"  nomeia {100*nomear:.0f}% das palavras). Continue ensinando — ele segue aprendendo.")
+    else:
+        print("  Ele NASCE SEM SABER NADA. Ensine com 'ensina <palavra>' ou 'treina tudo 30',")
+        print("  e veja-o aprender. (Dica: rode 'python train.py' para treiná-lo antes.)")
+    print("  Digite 'ajuda' para os comandos.")
+    print(HELP)
     while True:
         try:
             line = input("\nvocê> ").strip()
@@ -196,6 +236,12 @@ def main():
                 chat.palavras()
             elif cmd == "status":
                 chat.status()
+            elif cmd == "salvar":
+                chat.salvar()
+            elif cmd == "carregar":
+                chat.carregar()
+            elif cmd == "esquecer":
+                chat.esquecer()
             elif cmd == "ver" and len(parts) == 2 and parts[1] in WORD_IDX:
                 chat.ver(parts[1])
             elif cmd == "ensina" and len(parts) == 2 and parts[1] in WORD_IDX:
