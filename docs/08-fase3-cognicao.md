@@ -544,11 +544,41 @@ compreender linguagem (correferência), em miniatura.
 correferência, NÃO resolução plena (sem gênero/número, sem cadeias longas de correferência,
 sem inferência pragmática) — horizonte distante, provável híbrido.
 
+### M32 — Frases mais ricas: descrição de 3 atributos ✅ (concluído)
+**Objetivo:** o M27 montou frases de 2 atributos. Uma descrição de verdade é mais rica: "a
+barra VERMELHA no TOPO" — forma, COR e posição. Este marco generaliza o aprendiz de frases
+para 3 ATRIBUTOS: o agente percebe os 3 atributos e monta/entende uma frase de 3 palavras,
+descobrindo só ouvindo o grounding e a ORDEM. Com 3×3×3 há 27 cenas possíveis.
+**Pergunta científica (H15):** o agente monta descrições composicionais de 3 atributos,
+generaliza para cenas nunca vistas, e o mesmo mecanismo aprende ordens de idiomas diferentes?
+- [x] `src/brain/rich_sentence.py`: `RichSentenceLearner` — N atributos; papel de cada slot
+      por EXCLUSIVIDADE MÚTUA (atribuição gulosa, uma divisão de trabalho dos 3 papéis);
+      produz/entende; `make_rich_language(order)` para qualquer ordem de slots.
+- [x] 5 testes — `tests/test_rich_sentence.py` (total: **131 verdes**).
+
+**Resultados (`experiments/m32_rich_sentence.py`) — média de 6 sementes:**
+- ✅ **Monta descrições de 3 atributos**: produzir/entender **100%** (PT e outro idioma).
+- ✅ **GENERALIZA (produtividade forte)**: treina em 18 de 27 cenas, monta frases certas para
+      as 9 **nunca vistas** — **100%**. A curva mostra generalização plena mesmo com poucas
+      cenas no treino: infinitos significados de poucas palavras.
+- ✅ **Mesmo mecanismo, ordens diferentes**: aprende a ordem de PT `(forma,cor,posição)` →
+      "barra vermelho topo" e de outro idioma `(posição,forma,cor)` → "topo barra vermelho".
+- ✅ **Baseline honesto**: ordem aleatória (sem regra fixa) entende só **23%** — prova que
+      aprende SINTAXE de 3 slots, não decora.
+
+**Significado:** é a produtividade da linguagem em ação — descrições ricas (forma+cor+posição)
+ancoradas, compostas de partes, generalizando para o que nunca se ouviu. O salto que mais
+mostra composicionalidade real, na linha do "falar de verdade".
+
+**Honesto:** escala de brinquedo (3 atributos, 3 valores, frase de tamanho fixo). É o MECANISMO
+da descrição composicional rica, NÃO fluência, NÃO recursão, NÃO tamanho variável — horizonte
+distante, provável híbrido.
+
 ### Próximos (horizonte distante)
-- M32: frases mais ricas (3+ atributos, tamanho variável, recursão simples), e unir TUDO num
-  agente só — corpo 2D + planejamento + diálogo contextual/correferência + substrato
-  spiking/esparso. Semântica mais profunda; para linguagem plena, provável híbrido. O "100%"
-  segue sendo o norte.
+- M33: tamanho de frase VARIÁVEL e recursão simples (frases dentro de frases); unir TUDO num
+  agente só — corpo 2D + planejamento + diálogo contextual/correferência + frases ricas +
+  substrato spiking/esparso. Semântica mais profunda; para linguagem plena, provável híbrido.
+  O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a
