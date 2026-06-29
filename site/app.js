@@ -31,8 +31,17 @@
       ],
     },
     {
-      sec: "§3", name: "Os primeiros sinais de pensamento",
-      intro: "Prever no tempo, aprender regras e inventar uma forma de se comunicar com sentido.",
+      sec: "§3", name: "Eficiência: o caminho do cérebro",
+      intro: "O cérebro humano pensa gastando menos energia que uma lâmpada. A aposta deste projeto: capacidade vem do método (esparsidade, poucos neurônios ativos por vez), não da força bruta — e os neurônios que disparam entram no organismo.",
+      milestones: [
+        { t: "Eficiência como o cérebro", d: "Ativando poucos neurônios por vez, como no córtex, a rede faz o mesmo trabalho com cerca de 7 vezes menos operações. O caminho é o método, não a força bruta.", img: "m22_sparse_efficient.png" },
+        { t: "O organismo eficiente", d: "O mesmo organismo que percebe, lembra e fala, agora rodando nesse modo econômico: continua aprendendo a ver e a se comunicar, gastando bem menos.", img: "m23_efficient_organism.png" },
+        { t: "Perceber com neurônios que disparam", d: "O organismo passa a perceber com neurônios que disparam de verdade (spiking), e não com números contínuos. A cognição sobrevive aos spikes, e a esparsidade surge sozinha do limiar do disparo.", img: "m24_spiking_organism.png" },
+      ],
+    },
+    {
+      sec: "§4", name: "Percepção e linguagem que co-emergem",
+      intro: "Prever no tempo, aprender regras, inventar uma língua com sentido — e, com corpo no mundo, perceber e falar nascendo juntos da vivência.",
       milestones: [
         { t: "Prever no tempo", d: "Aprende sequências ao longo do tempo e consegue imaginar como elas continuam.", img: "m14_temporal.png" },
         { t: "Gramática", d: "Aprende as regras de uma pequena 'gramática' e cria frases novas que respeitam essas regras.", img: "m15_grammar.png" },
@@ -42,14 +51,24 @@
         { t: "A língua nasce da vivência", d: "Cada agente aprende sozinho a reconhecer as coisas; depois os dois inventam uma língua sobre esses conceitos vividos, não sobre rótulos dados.", img: "m19_lived_language.png" },
         { t: "Um organismo vivo", d: "Num laço só, dois agentes percebem, lembram, são curiosos e falam ao mesmo tempo. Primeiro aprendem a ver; a linguagem vem logo atrás.", img: "m20_living_mind.png" },
         { t: "Palavras de português", d: "Como uma criança: vê o mundo e ouve a palavra certa junto. Aprende a dizer 'topo', 'centro', 'direita' do que vê, e a apontar quando ouve. Só nomeia o que consegue distinguir.", img: "m21_portuguese.png" },
+        { t: "O organismo que se move e fala", d: "Com corpo num mundo, dois agentes navegam por curiosidade, percebem onde estão, lembram e falam — só alinhando a língua quando se encontram. Falar quando ver custa andar.", img: "m25_embodied_language.png" },
+        { t: "Planejar e nomear o escondido", d: "Num mundo 2D com parede, só quem planeja a rota alcança, percebe e aprende a nomear o objeto escondido atrás dela. O reativo nunca chega — efeito puro de integração.", img: "m26_planning_language.png" },
       ],
     },
     {
-      sec: "§4", name: "Eficiência: o caminho do cérebro",
-      intro: "O cérebro humano pensa gastando menos energia que uma lâmpada. A aposta deste projeto: capacidade vem do método (esparsidade, poucos neurônios ativos por vez), não da força bruta.",
+      sec: "§5", name: "Da palavra ao raciocínio",
+      intro: "A linha da linguagem: sair de palavras soltas para frases, conversa, contexto e os primeiros operadores lógicos — tudo aprendido vivendo e ancorado no que se percebe, o oposto de decorar texto.",
       milestones: [
-        { t: "Eficiência como o cérebro", d: "Ativando poucos neurônios por vez, como no córtex, a rede faz o mesmo trabalho com cerca de 7 vezes menos operações. O caminho é o método, não a força bruta.", img: "m22_sparse_efficient.png" },
-        { t: "O organismo eficiente", d: "O mesmo organismo que percebe, lembra e fala, agora rodando nesse modo econômico: continua aprendendo a ver e a se comunicar, gastando bem menos.", img: "m23_efficient_organism.png" },
+        { t: "A primeira frase (em dois idiomas)", d: "Vê uma cena (forma e posição) e aprende, só ouvindo, a montar uma frase de duas palavras. O mesmo mecanismo aprende a ordem do português e do inglês, e generaliza para frases nunca vistas.", img: "m27_grounded_sentence.png" },
+        { t: "Conversa emergente com frases", d: "Sem professor, dois agentes inventam uma língua com frases só para se entenderem. Vocabulário e ordem das palavras emergem da coordenação — uma gramática comum aos dois.", img: "m28_emergent_sentence.png" },
+        { t: "Diálogo: pergunta e resposta", d: "Um pergunta 'que forma?' ou 'que posição?', o outro percebe a cena e responde só o que foi perguntado. Usar a pergunta para escolher o que dizer é o começo de raciocinar sobre a linguagem.", img: "m29_dialogue.png" },
+        { t: "Conversa com memória", d: "Vários turnos sobre o mesmo objeto: ele fica em foco e o agente resolve a referência ('e a posição dela?'). Sem memória, cada turno fica isolado e a conversa não se sustenta.", img: "m30_contextual_dialogue.png" },
+        { t: "A quem 'dela' se refere", d: "Com vários objetos na cena, 'dela' fica ambíguo. O agente resolve o referente certo pela recência ou pela descrição — o começo de entender a ambiguidade da linguagem.", img: "m31_coreference.png" },
+        { t: "Descrições mais ricas", d: "Frases de três atributos (forma, cor, posição). O agente generaliza para a maior parte das cenas que nunca viu: infinitos significados de poucas palavras.", img: "m32_rich_sentence.png" },
+        { t: "Recursão", d: "Frases dentro de frases: 'a barra vermelha acima do ponto azul'. Estruturas dentro de estruturas, reusando as partes — o que dá à linguagem seu poder infinito.", img: "m33_relational_sentence.png" },
+        { t: "Negação", d: "'Não o vermelho' é um operador lógico: aponta o objeto pelo que ele NÃO é (o complemento). Quem ignora o 'não' pega exatamente o errado.", img: "m34_negation.png" },
+        { t: "Descobrir a gramática sozinho", d: "Como um bebê ouvindo a língua ao redor: só com frases, sem nenhum rótulo, descobre as classes de palavras e a ordem da língua pela estatística. De 'alguém me ensina' para 'eu descubro'.", img: "m35_grammar_discovery.png" },
+        { t: "Todos, algum, nenhum", d: "Avalia afirmações sobre conjuntos ('todos são vermelhos?') checando a frase contra a cena. É semântica de verdade: a frase é verdadeira ou falsa conforme o mundo — raciocinar, não só nomear.", img: "m36_quantifiers.png" },
       ],
     },
   ];

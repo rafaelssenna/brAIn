@@ -2,7 +2,7 @@
 
 > Uma inteligência que **nasce sem saber nada** e aprende vivendo, no jeito do cérebro, não como um Transformer.
 
-🌐 **Site/portfólio:** a jornada completa (18 marcos, com as figuras de cada experimento) vive no site,
+🌐 **Site/portfólio:** a jornada completa (36 marcos em 5 fases, com as figuras de cada experimento) vive no site,
 em `index.html` + `site/`.
 
 > Projeto de **Rafael Sena Roman**. Código aberto sob licença MIT. Ver [AUTHORS.md](AUTHORS.md).
