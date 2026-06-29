@@ -653,9 +653,35 @@ do que escuta. Fecha a ponte entre "alguém me ensina" e "eu descubro sozinho".
 **Honesto:** vocabulário pequeno, gramática regular (sem recursão), escala de brinquedo. É o
 MECANISMO da descoberta estatística de classes/gramática, NÃO indução de gramática plena.
 
+### M36 — Quantificadores: "todos", "algum", "nenhum" ✅ (concluído)
+**Objetivo:** a linguagem faz AFIRMAÇÕES sobre CONJUNTOS com quantificadores. Avaliar "todos
+são vermelhos?" não é descrever — é checar a frase CONTRA o mundo (semântica de valor de
+verdade): percorrer o conjunto e aplicar ∀ / ∃ / ¬∃.
+**Pergunta científica (H19):** o agente avalia frases QUANTIFICADAS corretamente, aplicando a
+lógica de ∀/∃/¬∃ sobre o conjunto percebido?
+- [x] `src/brain/quantifiers.py`: `QuantifierGame` — percebe a cor de cada objeto (grounding do
+      `DialogueGame`) e aplica a lógica do quantificador: `todos`=all, `algum`=any, `nenhum`=not
+      any. `correct_logic=False` = baseline (confunde tudo com "algum"). `ALL/SOME/NONE`.
+- [x] 5 testes — `tests/test_quantifiers.py` (total: **151 verdes**).
+
+**Resultados (`experiments/m36_quantifiers.py`) — média de 6 sementes:**
+- ✅ **Avalia os três quantificadores**: todos **100%**, algum **100%**, nenhum **100%** (V/F).
+- ✅ **Ablação honesta**: o agente que confunde os quantificadores (sempre "algum") acerta
+      "algum" (100%) mas erra "todos" (**33%**) e "nenhum" (**0%**) — geral **44%**.
+- ✅ Exemplos: cena [vermelho,vermelho,vermelho] + "todos vermelho?" → VERDADEIRO; cena
+      [vermelho,verde,vermelho] + "todos vermelho?" → FALSO.
+
+**Significado:** é a SEMÂNTICA DE VALOR DE VERDADE — uma frase é verdadeira ou falsa conforme
+o mundo, e o agente checa isso aplicando lógica (∀/∃/¬∃) sobre o que percebe. Mais um passo do
+"nomear" para o "raciocinar com" a linguagem (junto da negação do M34).
+
+**Honesto:** 3 quantificadores, conjuntos pequenos, 1 propriedade, escala de brinquedo. É o
+MECANISMO da quantificação, NÃO semântica plena (sem quantificadores aninhados, sem escopo).
+
 ### Próximos (horizonte distante)
-- M36: quantificadores ("todos", "algum", "nenhum"); recursão mais profunda; unir TUDO num
-  agente só. Semântica mais profunda; para linguagem plena, provável híbrido. O "100%" é o norte.
+- M37+: recursão mais profunda, semântica composicional (quantificador × relação), e unir TUDO
+  num agente só — corpo 2D + planejamento + diálogo + linguagem rica + substrato spiking/esparso.
+  Para linguagem plena, provável híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

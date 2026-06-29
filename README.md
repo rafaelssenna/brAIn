@@ -121,7 +121,11 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   língua: recebendo SÓ frases (sem rótulos), o agente descobre as **classes de palavras**
   (formas/cores/posições separam sozinhas, pureza 100%) e a **gramática** (ordem das classes) só
   pela estatística das co-ocorrências (Saffran 1996), distinguindo frases corretas de
-  embaralhadas (100%/100%). De "alguém me ensina" para "eu descubro sozinho". **146 testes verdes.**
+  embaralhadas (100%/100%). De "alguém me ensina" para "eu descubro sozinho" · **M36**
+  **quantificadores** — "todos/algum/nenhum são vermelhos?" é semântica de verdade: o agente
+  checa a frase **contra a cena** (∀/∃/¬∃) e responde V/F (100% nos três), enquanto confundir os
+  quantificadores erra "todos" e "nenhum" (geral 44%). Raciocinar com a linguagem, não só nomear.
+  **151 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o
