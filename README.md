@@ -99,7 +99,11 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   RESPONDE só a palavra certa. O diálogo emerge sem professor (17%→100%); o agente aprende a
   **responder à pergunta** (usar a pergunta pra escolher o que dizer): forma 100% e posição
   100%, enquanto um agente CEGO à pergunta acerta forma mas erra a posição (33%=acaso). Do
-  conversar ao dialogar — o começo de raciocinar sobre a linguagem. **116 testes verdes.**
+  conversar ao dialogar — o começo de raciocinar sobre a linguagem · **M30** **diálogo de
+  vários turnos com contexto** — o objeto sobre o qual se falou fica em FOCO e o agente resolve
+  a referência ("que forma?"→"barraH"; "e a posição DELA?"→"topo"). Com memória de contexto
+  resolve "dela" 100%; sem contexto cai ao acaso (33%). Liga linguagem + memória — a conversa
+  fica coerente no tempo. **121 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o
@@ -107,11 +111,12 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
 > deu **planejamento num mundo 2D** com paredes, e o **M27** deu a **primeira FRASE** (sair
 > de palavra solta para palavras com estrutura, em PT e EN), e o **M28** fez dois agentes
 > **conversarem com frases sem professor** (língua e gramática emergentes), e o **M29** fez o
-> **diálogo com turnos** (pergunta→resposta, o agente responde ao que foi perguntado). Mas cada
-> marco isola dimensões: as frases têm 2 palavras de tamanho fixo (não recursão, não fluência);
-> a generalização emergente é parcial (75%); o diálogo tem 1 turno e 2 perguntas; e ainda **não**
-> existe um único agente com corpo 2D + planejamento + diálogo + substrato spiking/esparso, tudo
-> junto — unir tudo e enriquecer (3+ atributos, turnos encadeados, recursão) é futuro (M30+). E
+> **diálogo com turnos** (pergunta→resposta), e o **M30** deu **memória de contexto ao diálogo**
+> (vários turnos, resolve "dela"). Mas cada marco isola dimensões: as frases têm 2 palavras de
+> tamanho fixo (não recursão, não fluência); a generalização emergente é parcial (75%); o diálogo
+> tem 1 objeto em foco por vez (sem correferência ambígua); e ainda **não** existe um único agente
+> com corpo 2D + planejamento + diálogo contextual + substrato spiking/esparso, tudo junto — unir
+> tudo e enriquecer (3+ atributos, múltiplos referentes, recursão) é futuro (M31+). E
 > raciocínio/linguagem plenos são a *estrela-guia emergente*
 > ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido, verificado, e
 > recuado onde os dados não sustentaram.

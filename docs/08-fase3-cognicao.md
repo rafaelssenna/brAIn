@@ -485,11 +485,41 @@ responde "topo".
 É o MECANISMO do turno pergunta→resposta com seleção, NÃO diálogo pleno (sem turnos encadeados,
 sem sintaxe rica, sem semântica profunda) — horizonte distante, provável híbrido.
 
+### M30 — Diálogo de VÁRIOS TURNOS com contexto (a conversa coerente no tempo) ✅ (concluído)
+**Objetivo:** o M29 fez um turno isolado. Uma conversa de verdade tem MEMÓRIA: o que foi dito
+antes importa, e a gente se refere a isso ("...e a posição DELA?"). Este marco dá esse passo —
+um diálogo de vários turnos onde o objeto sobre o qual se falou fica EM FOCO e turnos seguintes
+o referem, sem remostrar nada. Liga linguagem (M29) à memória (M8).
+**Pergunta científica (H13):** um agente sustenta um diálogo de vários turnos, resolvendo uma
+referência ("dela") ao objeto em foco — algo que um agente SEM memória de contexto não consegue?
+- [x] `src/brain/contextual_dialogue.py`: `ContextualDialogue` — estende o `DialogueGame` (M29,
+      grounding forma/posição) com um rastreador de FOCO: o último objeto falado fica em foco e
+      pode ser referido. Tipos de turno `ASK_SHAPE_NEW`/`ASK_POS_NEW` (objeto novo, entra em
+      foco) e `ASK_POS_REF`/`ASK_SHAPE_REF` (referência ao foco). `use_context=False` = baseline.
+- [x] 5 testes — `tests/test_contextual_dialogue.py` (total: **121 verdes**).
+
+**Resultados (`experiments/m30_contextual_dialogue.py`) — média de 6 sementes:**
+- ✅ **Resolve a referência**: COM memória de contexto, responde "e a posição dela?" **100%** e
+      "e a forma dela?" **100%** — lembra o objeto em foco e responde sobre ele.
+- ✅ **Ablação honesta (a memória importa)**: SEM contexto (cada turno isolado), a referência
+      cai ao ACASO — posição **33%**, forma **41%** (acaso ~33%). O agente não sabe a quem "dela"
+      se refere. Ganho do contexto: **+67** e **+59** pontos.
+- ✅ **Diálogo coerente**: ex. "que forma?" → "barraH"; "e a posição dela?" → "topo" — o
+      assunto se mantém entre turnos sem o objeto ser reapresentado.
+
+**Significado:** é a COERÊNCIA do diálogo no tempo — lembrar do que se falou e se referir a
+isso. Pela primeira vez o brAIn sustenta uma conversa de vários turnos com um referente em
+foco, ligando linguagem e memória. É o que separa uma conversa de respostas isoladas.
+
+**Honesto:** escala de brinquedo (1 objeto em foco por vez, referência simples, poucos
+atributos). É o MECANISMO do contexto de diálogo, NÃO conversa plena (sem múltiplos referentes,
+sem correferência ambígua, sem pragmática rica) — horizonte distante, provável híbrido.
+
 ### Próximos (horizonte distante)
-- M30: frases mais ricas (3+ atributos, tamanho variável, recursão simples) e turnos
-  ENCADEADOS (diálogo de várias trocas); unir TUDO num agente só — corpo 2D + planejamento +
-  diálogo + substrato spiking/esparso. Semântica mais profunda; para linguagem plena, provável
-  híbrido. O "100%" segue sendo o norte.
+- M31: frases mais ricas (3+ atributos, tamanho variável, recursão simples), múltiplos
+  referentes em foco (correferência ambígua), e unir TUDO num agente só — corpo 2D +
+  planejamento + diálogo contextual + substrato spiking/esparso. Semântica mais profunda; para
+  linguagem plena, provável híbrido. O "100%" segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a
