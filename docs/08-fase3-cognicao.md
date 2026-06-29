@@ -515,11 +515,40 @@ foco, ligando linguagem e memória. É o que separa uma conversa de respostas is
 atributos). É o MECANISMO do contexto de diálogo, NÃO conversa plena (sem múltiplos referentes,
 sem correferência ambígua, sem pragmática rica) — horizonte distante, provável híbrido.
 
+### M31 — Correferência: resolver 'dela' entre VÁRIOS objetos ✅ (concluído)
+**Objetivo:** o M30 manteve UM objeto em foco, então "dela" era trivial. Uma conversa real
+fala de VÁRIOS objetos, e "dela" fica AMBÍGUO: qual delas? O cérebro resolve com pistas — a
+mais recente/saliente, ou a que casa com uma descrição. Este marco dá esse passo: a cena tem
+vários objetos e o agente escolhe o referente CERTO.
+**Pergunta científica (H14):** com vários candidatos, o agente resolve 'dela' escolhendo o
+referente certo (pela recência ou pela descrição) — algo que escolher ao acaso não consegue?
+- [x] `src/brain/coreference.py`: `CoreferenceDialogue` — mantém uma PILHA DE FOCO (objetos
+      mencionados, por recência); resolve a referência por RECÊNCIA (topo da pilha) ou por
+      DESCRIÇÃO (o objeto cujo atributo casa). Reusa o grounding do M29. `strategy='random'` =
+      baseline (escolhe um candidato ao acaso).
+- [x] 5 testes — `tests/test_coreference.py` (total: **126 verdes**).
+
+**Resultados (`experiments/m31_coreference.py`) — média de 6 sementes, cena com 2 objetos:**
+- ✅ **Recência resolve**: "e a posição dela?" acerta o referente certo (o mais recente) **100%**.
+- ✅ **Ablação honesta**: escolher um candidato ao ACASO resolve só **51%** (≈ acaso com 2
+      candidatos, 50%). A estratégia de recência é o que desfaz a ambiguidade.
+- ✅ **Descrição desambigua**: "a barraH, a posição dela?" escolhe pelo ATRIBUTO dito **100%** —
+      pega a barraH mesmo quando ela não é a mais recente.
+
+**Significado:** é o começo de entender a AMBIGUIDADE da linguagem — a quem um pronome se
+refere depende do contexto e das pistas (recência, descrição). Pela primeira vez o brAIn
+escolhe o referente certo entre vários, não só lembra um. Um dos problemas centrais de
+compreender linguagem (correferência), em miniatura.
+
+**Honesto:** escala de brinquedo (2 objetos, recência/descrição simples). É o MECANISMO da
+correferência, NÃO resolução plena (sem gênero/número, sem cadeias longas de correferência,
+sem inferência pragmática) — horizonte distante, provável híbrido.
+
 ### Próximos (horizonte distante)
-- M31: frases mais ricas (3+ atributos, tamanho variável, recursão simples), múltiplos
-  referentes em foco (correferência ambígua), e unir TUDO num agente só — corpo 2D +
-  planejamento + diálogo contextual + substrato spiking/esparso. Semântica mais profunda; para
-  linguagem plena, provável híbrido. O "100%" segue sendo o norte.
+- M32: frases mais ricas (3+ atributos, tamanho variável, recursão simples), e unir TUDO num
+  agente só — corpo 2D + planejamento + diálogo contextual/correferência + substrato
+  spiking/esparso. Semântica mais profunda; para linguagem plena, provável híbrido. O "100%"
+  segue sendo o norte.
 
 > Honestidade permanente: estamos longe do "100%". Cada marco é um tijolo real e
 > verificado; a casa inteira (cognição/linguagem plenas) é o horizonte, não a

@@ -31,6 +31,7 @@ M27: a primeira frase ancorada, aprendida ouvindo (forma+posição; mesmo mecani
 M28: conversa emergente com frases — dois agentes inventam uma língua composicional sem professor.
 M29: diálogo com turnos — pergunta→resposta ancorada (a pergunta seleciona o que descrever).
 M30: diálogo de vários turnos com contexto — lembra o objeto em foco e resolve referência ("dela").
+M31: correferência — resolve "dela" entre VÁRIOS objetos (pela recência ou por descrição).
 """
 
 from .neuron import LIFPopulation, fi_curve_theory
@@ -57,6 +58,7 @@ from .emergent_sentence import EmergentSentenceGame
 from .dialogue import DialogueGame, ASK_SHAPE, ASK_POS
 from .contextual_dialogue import (ContextualDialogue, ASK_SHAPE_NEW, ASK_POS_NEW,
                                   ASK_POS_REF, ASK_SHAPE_REF)
+from .coreference import CoreferenceDialogue
 
 __all__ = [
     "TemporalPredictiveCoder", "SignalingGame", "CompositionalGame", "GroundedLanguageGame",
@@ -74,4 +76,5 @@ __all__ = [
     "EmergentSentenceGame",
     "DialogueGame", "ASK_SHAPE", "ASK_POS",
     "ContextualDialogue", "ASK_SHAPE_NEW", "ASK_POS_NEW", "ASK_POS_REF", "ASK_SHAPE_REF",
+    "CoreferenceDialogue",
 ]

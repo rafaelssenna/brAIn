@@ -103,7 +103,10 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
   vários turnos com contexto** — o objeto sobre o qual se falou fica em FOCO e o agente resolve
   a referência ("que forma?"→"barraH"; "e a posição DELA?"→"topo"). Com memória de contexto
   resolve "dela" 100%; sem contexto cai ao acaso (33%). Liga linguagem + memória — a conversa
-  fica coerente no tempo. **121 testes verdes.**
+  fica coerente no tempo · **M31** **correferência** — a cena tem VÁRIOS objetos e "dela" fica
+  ambíguo; o agente resolve o referente certo pela **recência** (100% vs 51% ao acaso) ou por
+  **descrição** ("a barraH, posição dela?" → escolhe pelo atributo, 100%). O começo de entender
+  a ambiguidade da linguagem. **126 testes verdes.**
   O "100%" (cognição/linguagem plenas) segue distante — cada marco é um tijolo real e verificado.
 
 > ⚠️ **Honestidade:** o **M24** colocou o **spiking** (M10) dentro do organismo vivo, o
@@ -111,12 +114,12 @@ O "100%" é a **estrela-guia**, não a entrega. A entrega é um sistema *genuina
 > deu **planejamento num mundo 2D** com paredes, e o **M27** deu a **primeira FRASE** (sair
 > de palavra solta para palavras com estrutura, em PT e EN), e o **M28** fez dois agentes
 > **conversarem com frases sem professor** (língua e gramática emergentes), e o **M29** fez o
-> **diálogo com turnos** (pergunta→resposta), e o **M30** deu **memória de contexto ao diálogo**
-> (vários turnos, resolve "dela"). Mas cada marco isola dimensões: as frases têm 2 palavras de
-> tamanho fixo (não recursão, não fluência); a generalização emergente é parcial (75%); o diálogo
-> tem 1 objeto em foco por vez (sem correferência ambígua); e ainda **não** existe um único agente
-> com corpo 2D + planejamento + diálogo contextual + substrato spiking/esparso, tudo junto — unir
-> tudo e enriquecer (3+ atributos, múltiplos referentes, recursão) é futuro (M31+). E
-> raciocínio/linguagem plenos são a *estrela-guia emergente*
-> ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo medido, verificado, e
-> recuado onde os dados não sustentaram.
+> **diálogo com turnos** (pergunta→resposta), o **M30** deu **memória de contexto** (resolve
+> "dela"), e o **M31** resolveu **correferência** entre vários objetos (recência/descrição). Mas
+> cada marco isola dimensões: as frases têm 2 palavras de tamanho fixo (não recursão, não
+> fluência); a generalização emergente é parcial (75%); a correferência usa 2 objetos e pistas
+> simples (sem gênero/número, sem cadeias longas); e ainda **não** existe um único agente com
+> corpo 2D + planejamento + diálogo + substrato spiking/esparso, tudo junto — unir tudo e
+> enriquecer (3+ atributos, recursão) é futuro (M32+). E raciocínio/linguagem plenos são a
+> *estrela-guia emergente* ([docs/01](docs/01-visao-e-hipotese.md)), não entregas próximas. Tudo
+> medido, verificado, e recuado onde os dados não sustentaram.
